@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+   <meta charset="UTF-8">
+   <title data-lang-ua="Завершені курси" data-lang-en="Completed Courses">Завершені курси</title>
+   <link rel="stylesheet" href="styles.css">
+   <script src="script.js" defer></script>
+</head>
+
+<!--------------------------------------------------------------------------------Сайдбар-------------------------------------------------------------------------------->
+<div id="universalModal" class="modal">
+   <span class="close">&times;</span>
+   <div class="modal-body" id="modalBody"></div>
+</div>
+
+<body>
+   <header class="top-bar">
+      <button id="menu-toggle">
+         ☰ <span id="menu-text" data-lang-ua="Портфоліо" data-lang-en="Portfolio">Портфоліо</span>
+      </button>
+
+      <nav id="page-links">
+         <a href="index.html" data-lang-ua="Головна" data-lang-en="Home">Головна</a>
+         <a href="courses.html" data-lang-ua="Завершені курси" data-lang-en="Completed Courses">Завершені
+            курси</a>
+         <a href="projects.html" data-lang-ua="Мої проекти" data-lang-en="My Projects">Мої проекти</a>
+         <a href="Maksakov_CV.pdf" download class="resume-button" data-lang-ua="Завантажити резюме"
+            data-lang-en="Download Resume">Завантажити резюме</a>
+      </nav>
+
+      <button id="language-toggle">
+         <img id="flag" src="Images/uk.png" alt="Flag">
+         <span id="lang-text" data-lang-ua="Українська версія" data-lang-en="Ukrainian version">Українська версія</span>
+      </button>
+   </header>
+   <div class="container">
+      <div id="sidebar">
+         <div id="sidebar-content">
+            <img src="Images/MyPhoto.png" alt="Ваше фото" id="profile-photo">
+            <h1 data-lang-ua="Особисті дані" data-lang-en="General information">Особисті дані</h1>
+            <h3 data-lang-ua="ПІБ" data-lang-en="Full name">ПІБ</h3>
+            <p data-lang-ua="Максаков Владислав Олександрович" data-lang-en="Maksakov Vladyslav">Максаков Владислав
+               Олександрович</p>
+            <h3 data-lang-ua="Дата народження" data-lang-en="Date of Birth">Дата народження</h3>
+            <p>05.03.2004</p>
+            <h3 data-lang-ua="Місто" data-lang-en="City">Місто</h3>
+            <p data-lang-ua="Харків" data-lang-en="Kharkiv">Харків</p>
+            <h3 data-lang-ua="Номер телефону" data-lang-en="Phone Number">Номер телефону</h3>
+            <p>+38(095)-797-64-19</p>
+            <h3>Email</h3>
+            <p>vmaksakov92@gmail.com</p>
+
+            <!----------------------------------------------------------------Посилання на соц мережі-------------------------------------------------------------------->
+            <div id="social-icons-container">
+               <div id="social-icons">
+                  <a href="https://www.instagram.com/prosto_vlados.666/" target="_blank">
+                     <img src="Images/instagram-icon.png" alt="Instagram" loading="lazy">
+                  </a>
+                  <a href="https://t.me/vladislave_666" target="_blank">
+                     <img src="Images/telegram-icon.png" alt="Telegram" loading="lazy">
+                  </a>
+                  <a href="https://www.linkedin.com/in/владислав-максаков-b97384288" target="_blank">
+                     <img src="Images/linkedin-icon.png" alt="Linkedin" loading="lazy">
+                  </a>
+                  <a href="https://www.facebook.com/vlad.maksakov.1" target="_blank">
+                     <img src="Images/facebook-icon.png" alt="Facebook" loading="lazy">
+                  </a>
+                  <a href="https://github.com/VladislavMaksakov" target="_blank">
+                     <img src="Images/github-icon.png" alt="GitHub" loading="lazy">
+                  </a>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <div class="main-info">
+         <div class="course-block">
+            <h3 data-lang-ua="Курси від Coursera" data-lang-en="Courses from Coursera">Курси від Coursera</h3>
+            <div class="single-course">
+               <h4 data-lang-ua="Object-oriented programming concepts"
+                  data-lang-en="Object-oriented programming concepts">Object-oriented programming concepts</h4>
+               <p data-lang-ua="Вивчення принципів об'єктно-орієнтованого програмування: інкапсуляція, наслідування, поліморфізм і абстракція."
+                  data-lang-en="Study of object-oriented programming principles: encapsulation, inheritance, polymorphism, and abstraction.">
+                  Вивчення принципів об'єктно-орієнтованого програмування: інкапсуляція, наслідування, поліморфізм
+                  і
+                  абстракція.
+               </p>
+               <button class="cert-button" data-lang-ua="Переглянути сертифікат" data-lang-en="View Certificate"
+                  onclick="openUniversalModal('Images/Cert/Coursera/Coursera OOP.pdf')">
+                  Переглянути сертифікат
+               </button>
+            </div>
+            <div class="single-course">
+               <h4 data-lang-ua="Packet Switching Networks and Algorithms"
+                  data-lang-en="Packet Switching Networks and Algorithms">Packet Switching Networks and Algorithms
+               </h4>
+               <p data-lang-ua="Вивчення алгоритмів маршрутизації пакетів у комп'ютерних мережах, принципів передачі даних."
+                  data-lang-en="Study of packet switching algorithms in computer networks and principles of data transmission.">
+                  Вивчення алгоритмів маршрутизації пакетів у комп'ютерних мережах, принципів передачі даних.
+               </p>
+               <button class="cert-button" data-lang-ua="Переглянути сертифікат" data-lang-en="View Certificate"
+                  onclick="openUniversalModal('Images/Cert/Coursera/Coursera PSNA.pdf')">
+                  Переглянути сертифікат
+               </button>
+            </div>
+            <div class="single-course">
+               <h4 data-lang-ua="Introduction to TCP/IP" data-lang-en="Introduction to TCP/IP">Introduction to
+                  TCP/IP
+               </h4>
+               <p data-lang-ua="Огляд основних протоколів мережі Інтернет (TCP/IP), робота транспортного та мережевого рівнів."
+                  data-lang-en="Overview of the basic Internet protocols (TCP/IP), operation of the transport and network layers.">
+                  Огляд основних протоколів мережі Інтернет (TCP/IP), робота транспортного та мережевого рівнів.
+               </p>
+               <button class="cert-button" data-lang-ua="Переглянути сертифікат" data-lang-en="View Certificate"
+                  onclick="openUniversalModal('Images/Cert/Coursera/Coursera Intro TCP-IP.pdf')">
+                  Переглянути сертифікат
+               </button>
+            </div>
+            <div class="single-course">
+               <h4 data-lang-ua="The Bits and Bytes of Computer Networking"
+                  data-lang-en="The Bits and Bytes of Computer Networking">The Bits and Bytes of Computer
+                  Networking
+               </h4>
+               <p data-lang-ua="Основи комп'ютерних мереж, фізичні та канальні рівні передачі даних, основи мережевого обладнання."
+                  data-lang-en="Basics of computer networks, physical and data link layers, fundamentals of networking equipment.">
+                  Основи комп'ютерних мереж, фізичні та канальні рівні передачі даних, основи мережевого
+                  обладнання.
+               </p>
+               <button class="cert-button" data-lang-ua="Переглянути сертифікат" data-lang-en="View Certificate"
+                  onclick="openUniversalModal('Images/Cert/Coursera/Coursera TBaBoCN.pdf')">
+                  Переглянути сертифікат
+               </button>
+            </div>
+            <div class="single-course">
+               <h4 data-lang-ua="Technical Support Fundamentals" data-lang-en="Technical Support Fundamentals">
+                  Technical Support Fundamentals</h4>
+               <p data-lang-ua="Основи технічної підтримки: налаштування обладнання, основи ОС, діагностика та вирішення проблем."
+                  data-lang-en="Fundamentals of technical support: hardware setup, OS basics, troubleshooting and problem-solving.">
+                  Основи технічної підтримки: налаштування обладнання, основи ОС, діагностика та вирішення
+                  проблем.
+               </p>
+               <button class="cert-button" data-lang-ua="Переглянути сертифікат" data-lang-en="View Certificate"
+                  onclick="openUniversalModal('Images/Cert/Coursera/Coursera TSF.pdf')">
+                  Переглянути сертифікат
+               </button>
+            </div>
+         </div>
+         <div class="course-block">
+            <h3 data-lang-ua="Курси від Udemy" data-lang-en="Courses from Udemy">Курси від Udemy</h3>
+
+            <!-- Python Django - Практичний курс -->
+            <div class="single-course">
+               <h4 data-lang-ua="Python Django - Практичний курс" data-lang-en="Python Django - The Practical Guide">
+                  Python Django - The Practical Guide
+               </h4>
+               <p data-lang-ua="Комплексний курс із розробки веб-застосунків на Django: робота з моделями, автентифікація користувачів, обробка форм, підключення баз даних та деплой на продакшн."
+                  data-lang-en="Comprehensive course on web application development with Django: working with models, user authentication, form handling, database integration, and production deployment.">
+                  Комплексний курс із розробки веб-застосунків на Django: робота з моделями, автентифікація
+                  користувачів, обробка форм, підключення баз даних та деплой на продакшн.
+               </p>
+               <button class="cert-button"
+                  onclick="openUniversalModal('Images/Cert/Python/Python Django - The Practical Guide.pdf')"
+                  data-lang-ua="Переглянути сертифікат" data-lang-en="View Certificate">
+                  Переглянути сертифікат
+               </button>
+            </div>
+
+            <!-- Django Python: Build a Full Stack Website with Features -->
+            <div class="single-course">
+               <h4 data-lang-ua="Django Python: Розробка повноцінного сайту"
+                  data-lang-en="Django Python: Build a Full Stack Website with Features">
+                  Django Python: Build a Full Stack Website with Features
+               </h4>
+               <p data-lang-ua="Створення повнофункціональних веб-проєктів із фронтендом і бекендом на Django: створення моделей, налаштування REST API, робота із сесіями та безпекою користувачів."
+                  data-lang-en="Building full-featured web projects with Django frontend and backend: creating models, setting up REST APIs, handling sessions, and user security.">
+                  Створення повнофункціональних веб-проєктів із фронтендом і бекендом на Django: створення моделей,
+                  налаштування REST API, робота із сесіями та безпекою користувачів.
+               </p>
+               <button class="cert-button"
+                  onclick="openUniversalModal('Images/Cert/Python/Django Python Build a Full Stack Website with Features.pdf')"
+                  data-lang-ua="Переглянути сертифікат" data-lang-en="View Certificate">
+                  Переглянути сертифікат
+               </button>
+            </div>
+
+            <!-- Django Masterclass Build 9 Real World Django Projects -->
+            <div class="single-course">
+               <h4 data-lang-ua="Django Masterclass: 9 реальних проєктів"
+                  data-lang-en="Django Masterclass: Build 9 Real World Django Projects">
+                  Django Masterclass: Build 9 Real World Django Projects
+               </h4>
+               <p data-lang-ua="Розробка дев'яти реальних проєктів на Django для різних сценаріїв: блоги, інтернет-магазини, CRM-системи, портфоліо та управління користувачами."
+                  data-lang-en="Development of nine real-world Django projects: blogs, e-commerce shops, CRM systems, portfolio websites, and user management.">
+                  Розробка дев'яти реальних проєктів на Django для різних сценаріїв: блоги, інтернет-магазини,
+                  CRM-системи, портфоліо та управління користувачами.
+               </p>
+               <button class="cert-button"
+                  onclick="openUniversalModal('Images/Cert/Python/Django Masterclass Build 9 Real World Django Projects.pdf')"
+                  data-lang-ua="Переглянути сертифікат" data-lang-en="View Certificate">
+                  Переглянути сертифікат
+               </button>
+            </div>
+
+            <!-- Django - The Complete Course 2025 -->
+            <div class="single-course">
+               <h4 data-lang-ua="Django - Повний курс 2025 (Початковий + Просунутий + AI)"
+                  data-lang-en="Django - The Complete Course 2025 (Beginner + Advanced + AI)">
+                  Django - The Complete Course 2025 (Beginner + Advanced + AI)
+               </h4>
+               <p data-lang-ua="Повний цикл навчання Django: від основ до просунутих концепцій і інтеграції штучного інтелекту в веб-проєкти. Реалізація CRUD-операцій, API, інтеграція чат-ботів і машинного навчання."
+                  data-lang-en="Complete Django training: from basics to advanced concepts and integration of artificial intelligence into web projects. CRUD operations, API development, chatbot and machine learning integration.">
+                  Повний цикл навчання Django: від основ до просунутих концепцій і інтеграції штучного інтелекту в
+                  веб-проєкти.
+               </p>
+               <button class="cert-button"
+                  onclick="openUniversalModal('Images/Cert/Python/Django - The Complete Course 2025 Beginner + Advance + AI.pdf')"
+                  data-lang-ua="Переглянути сертифікат" data-lang-en="View Certificate">
+                  Переглянути сертифікат
+               </button>
+            </div>
+
+            <!-- Python Django - Build Complex MultiVendor Ecommerce System -->
+            <div class="single-course">
+               <h4 data-lang-ua="Python Django - Побудова складної мультивендорної e-commerce системи"
+                  data-lang-en="Python Django - Build Complex MultiVendor Ecommerce System">
+                  Python Django - Build Complex MultiVendor Ecommerce System
+               </h4>
+               <p data-lang-ua="Практичний курс зі створення масштабованої мультивендорної платформи на Django: моделі користувачів, платіжні системи, інтерфейс продавця та адміністративна панель."
+                  data-lang-en="Practical course on building a scalable multi-vendor platform with Django: user models, payment systems, seller interface, and admin dashboard.">
+                  Практичний курс зі створення масштабованої мультивендорної платформи на Django: моделі користувачів,
+                  платіжні системи, інтерфейс продавця та адміністративна панель.
+               </p>
+               <button class="cert-button"
+                  onclick="openUniversalModal('Images/Cert/Python/Python Django - Build Complex MultiVendor Ecommerce System.pdf')"
+                  data-lang-ua="Переглянути сертифікат" data-lang-en="View Certificate">
+                  Переглянути сертифікат
+               </button>
+            </div>
+
+            <!-- Complete Microsoft SQL Server Database Administration Course -->
+            <div class="single-course">
+               <h4 data-lang-ua="Повний курс адміністрування Microsoft SQL Server"
+                  data-lang-en="Complete Microsoft SQL Server Database Administration Course">
+                  Complete Microsoft SQL Server Database Administration Course
+               </h4>
+               <p data-lang-ua="Повний курс з налаштування, адміністрування і оптимізації баз даних на Microsoft SQL Server: резервне копіювання, безпека, відновлення та автоматизація завдань."
+                  data-lang-en="Comprehensive course on configuration, administration, and optimization of databases on Microsoft SQL Server: backup, security, recovery, and task automation.">
+                  Повний курс з налаштування, адміністрування і оптимізації баз даних на Microsoft SQL Server: резервне
+                  копіювання, безпека, відновлення та автоматизація завдань.
+               </p>
+               <button class="cert-button"
+                  onclick="openUniversalModal('Images/Cert/BigData/Complete Microsoft SQL Server Database Administration Course.pdf')"
+                  data-lang-ua="Переглянути сертифікат" data-lang-en="View Certificate">
+                  Переглянути сертифікат
+               </button>
+            </div>
+
+            <!-- Практичний курс для новачків по SQL і PostgreSQL -->
+            <div class="single-course">
+               <h4 data-lang-ua="Практичний курс для новачків з SQL та PostgreSQL"
+                  data-lang-en="Practical Course for Beginners on SQL and PostgreSQL">
+                  Практичний курс для новачків з SQL та PostgreSQL
+               </h4>
+               <p data-lang-ua="Практичне навчання основам роботи з SQL і PostgreSQL: створення запитів, оптимізація баз даних, обробка транзакцій та безпека даних."
+                  data-lang-en="Practical training on SQL and PostgreSQL basics: creating queries, optimizing databases, handling transactions, and ensuring data security.">
+                  Практичне навчання основам роботи з SQL і PostgreSQL: створення запитів, оптимізація баз даних,
+                  обробка транзакцій та безпека даних.
+               </p>
+               <button class="cert-button"
+                  onclick="openUniversalModal('Images/Cert/BigData/Практический курс для новичков по SQL и PostgreSQL.pdf')"
+                  data-lang-ua="Переглянути сертифікат" data-lang-en="View Certificate">
+                  Переглянути сертифікат
+               </button>
+            </div>
+
+            <!-- The Ultimate Hands-On Hadoop: Tame your Big Data! -->
+            <div class="single-course">
+               <h4 data-lang-ua="Практичний курс Hadoop: Оптимізація Big Data"
+                  data-lang-en="The Ultimate Hands-On Hadoop: Tame your Big Data!">
+                  The Ultimate Hands-On Hadoop: Tame your Big Data!
+               </h4>
+               <p data-lang-ua="Поглиблене вивчення роботи з Big Data за допомогою Hadoop: обробка великих обсягів даних, робота з HDFS, MapReduce, Hive, Pig і Spark."
+                  data-lang-en="In-depth study of working with Big Data using Hadoop: processing large datasets, working with HDFS, MapReduce, Hive, Pig, and Spark.">
+                  Поглиблене вивчення роботи з Big Data за допомогою Hadoop: обробка великих обсягів даних, робота з
+                  HDFS, MapReduce, Hive, Pig і Spark.
+               </p>
+               <button class="cert-button"
+                  onclick="openUniversalModal('Images/Cert/BigData/The Ultimate Hands-On Hadoop Tame your Big Data!.pdf')"
+                  data-lang-ua="Переглянути сертифікат" data-lang-en="View Certificate">
+                  Переглянути сертифікат
+               </button>
+            </div>
+
+            <!-- Power BI от новичка до уверенного бизнес-пользователя -->
+            <div class="single-course">
+               <h4 data-lang-ua="Power BI: Від новачка до впевненого бізнес-користувача"
+                  data-lang-en="Power BI: From Beginner to Confident Business User">
+                  Power BI: Від новачка до впевненого бізнес-користувача
+               </h4>
+               <p data-lang-ua="Повний курс із створення дашбордів, візуалізації даних, роботи з різними джерелами даних і використання DAX для аналітики в Power BI."
+                  data-lang-en="Complete course on dashboard creation, data visualization, working with multiple data sources, and using DAX for analytics in Power BI.">
+                  Повний курс із створення дашбордів, візуалізації даних, роботи з різними джерелами даних і
+                  використання DAX для аналітики в Power BI.
+               </p>
+               <button class="cert-button"
+                  onclick="openUniversalModal('Images/Cert/BigData/Power BI от новичка до уверенного бизнес-пользователя.pdf')"
+                  data-lang-ua="Переглянути сертифікат" data-lang-en="View Certificate">
+                  Переглянути сертифікат
+               </button>
+            </div>
+
+         </div>
+
+         <div class="course-block">
+            <h3 data-lang-ua="Тренінги від Центру розвитку громадянського суспільства"
+               data-lang-en="Trainings from NGO Development Center">
+               Тренінги від Центру розвитку громадянського суспільства
+            </h3>
+            <div class="single-course">
+               <h4 data-lang-ua="Проєктний менеджмент для НУО. Грантрайтинг. Фандрейзинг. Моніторинг і оцінка проєктів."
+                  data-lang-en="Project Management for NGOs. Grant Writing. Fundraising. Project Monitoring and Evaluation.">
+                  Проєктний менеджмент для НУО. Грантрайтинг. Фандрейзинг. Моніторинг і оцінка проєктів.
+               </h4>
+               <p data-lang-ua="Вивчення планування, впровадження проєктів, підготовка грантових заявок, фандрейзинг та моніторинг результатів."
+                  data-lang-en="Study of project planning, implementation, grant application preparation, fundraising, and project results monitoring.">
+                  Вивчення планування, впровадження проєктів, підготовка грантових заявок, фандрейзинг та
+                  моніторинг результатів.
+               </p>
+               <button class="cert-button" data-lang-ua="Переглянути сертифікат" data-lang-en="View Certificate"
+                  onclick="openUniversalModal('Images/Cert/ЦРМ/ЦРМ_Грантрайтинг.pdf')">
+                  Переглянути сертифікат
+               </button>
+            </div>
+            <div class="single-course">
+               <h4 data-lang-ua="Canva для початківців та просунутий курс"
+                  data-lang-en="Canva for Beginners and Advanced Course">
+                  Canva для початківців та просунутий курс
+               </h4>
+               <p data-lang-ua="Навчання створення якісної графіки та презентацій для соціальних мереж, вебсайтів і бізнесу за допомогою Canva."
+                  data-lang-en="Training in creating high-quality graphics and presentations for social media, websites, and business using Canva.">
+                  Навчання створення якісної графіки та презентацій для соціальних мереж, вебсайтів і бізнесу за
+                  допомогою Canva.
+               </p>
+               <button class="cert-button" data-lang-ua="Переглянути сертифікат" data-lang-en="View Certificate"
+                  onclick="openUniversalModal('Images/Cert/ЦРМ/ЦРМ_Canva.pdf')">
+                  Переглянути сертифікат
+               </button>
+            </div>
+            <div class="single-course">
+               <h4 data-lang-ua="Power BI для початківців та просунутий курс"
+                  data-lang-en="Power BI for Beginners and Advanced Course">
+                  Power BI для початківців та просунутий курс
+               </h4>
+               <p data-lang-ua="Основи роботи з бізнес-аналітикою в Power BI: підключення до джерел даних, створення інтерактивних звітів і візуалізацій."
+                  data-lang-en="Fundamentals of business analytics in Power BI: connecting to data sources, creating interactive reports and visualizations.">
+                  Основи роботи з бізнес-аналітикою в Power BI: підключення до джерел даних, створення
+                  інтерактивних звітів і візуалізацій.
+               </p>
+               <button class="cert-button" data-lang-ua="Переглянути сертифікат" data-lang-en="View Certificate"
+                  onclick="openUniversalModal('Images/Cert/ЦРМ/ЦРМ_PowerBI.pdf')">
+                  Переглянути сертифікат
+               </button>
+            </div>
+         </div>
+         <div class="course-block">
+            <h3 data-lang-ua="Тренінг від Mehad" data-lang-en="Training from Mehad">Тренінг від Mehad</h3>
+
+            <div class="single-course">
+               <h4 data-lang-ua="Trauma Primary Bleeding and Life Support (TPBLS)"
+                  data-lang-en="Trauma Primary Bleeding and Life Support (TPBLS)">
+                  Trauma Primary Bleeding and Life Support (TPBLS)
+               </h4>
+               <p data-lang-ua="Навчання основним методам надання першої допомоги при серйозних кровотечах та травмах для порятунку життя."
+                  data-lang-en="Training in essential first aid techniques for severe bleeding and trauma to save lives.">
+                  Навчання основним методам надання першої допомоги при серйозних кровотечах та травмах для
+                  порятунку життя.
+               </p>
+               <button class="cert-button" data-lang-ua="Переглянути сертифікат" data-lang-en="View Certificate"
+                  onclick="openUniversalModal('Images/Cert/Грамоти/Тактична_Медицина.pdf')">
+                  Переглянути сертифікат
+               </button>
+            </div>
+         </div>
+         <div class="course-block">
+            <h3 data-lang-ua="Тренінг від Карітас" data-lang-en="Training from Caritas">Тренінг від Карітас</h3>
+
+            <div class="single-course">
+               <h4 data-lang-ua="Інтегрційна програма для нових працівників Карітас"
+                  data-lang-en="Integration program for new Caritas employees">
+                  Інтегрційна програма для нових працівників Карітас
+               </h4>
+               <p data-lang-ua="Ознайомлення з місією, цінностями та діяльністю організації «Карітас», правилами безпеки на робочому місці та етичними стандартами при взаємодії з бенефіціарами."
+                  data-lang-en="Familiarization with the mission, values, and activities of the Caritas organization, workplace safety rules, and ethical standards when interacting with beneficiaries.">
+                  Ознайомлення з місією, цінностями та діяльністю організації «Карітас», правилами безпеки на
+                  робочому місці та етичними стандартами при взаємодії з бенефіціарами.
+               </p>
+               <button class="cert-button" data-lang-ua="Переглянути сертифікат" data-lang-en="View Certificate"
+                  onclick="openUniversalModal('Images/Cert/Грамоти/Інтеграційна_програма_для_нових_працівників.pdf')">
+                  Переглянути сертифікат
+               </button>
+            </div>
+         </div>
+      </div>
+   </div>
+</body>
+
+</html>

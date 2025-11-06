@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+   <meta charset="UTF-8">
+   <title data-lang-ua="Портфоліо" data-lang-en="Portfolio"></title>
+   <link rel="stylesheet" href="styles.css">
+   <script src="script.js"></script>
+</head>
+<!----------------------------------------------------------------------------Сайдбар------------------------------------------------------------------------------>
+<div id="universalModal" class="modal">
+   <span class="close">&times;</span>
+   <div class="modal-body" id="modalBody"></div>
+</div>
+
+<body>
+   <header class="top-bar">
+      <button id="menu-toggle">
+         ☰ <span id="menu-text" data-lang-ua="Портфоліо" data-lang-en="Portfolio">Портфоліо</span>
+      </button>
+
+      <nav id="page-links">
+         <a href="index.html" data-lang-ua="Головна" data-lang-en="Home">Головна</a>
+         <a href="courses.html" data-lang-ua="Завершені курси" data-lang-en="Completed Courses">Завершені
+            курси</a>
+         <a href="projects.html" data-lang-ua="Мої проекти" data-lang-en="My Projects">Мої проекти</a>
+         <a href="Maksakov_CV.pdf" download class="resume-button" data-lang-ua="Завантажити резюме"
+            data-lang-en="Download Resume">Завантажити резюме</a>
+      </nav>
+
+      <button id="language-toggle">
+         <img id="flag" src="Images/uk.png" alt="Flag">
+         <span id="lang-text" data-lang-ua="Українська версія" data-lang-en="Ukrainian version">Українська версія</span>
+      </button>
+   </header>
+   <div class="container">
+      <div id="sidebar">
+         <div id="sidebar-content">
+            <img src="Images/MyPhoto.png" alt="Ваше фото" id="profile-photo">
+            <h1 data-lang-ua="Особисті дані" data-lang-en="General information">Особисті дані</h1>
+            <h3 data-lang-ua="ПІБ" data-lang-en="Full name">ПІБ</h3>
+            <p data-lang-ua="Максаков Владислав Олександрович" data-lang-en="Maksakov Vladyslav">Максаков Владислав
+               Олександрович</p>
+            <h3 data-lang-ua="Дата народження" data-lang-en="Date of Birth">Дата народження</h3>
+            <p>05.03.2004</p>
+            <h3 data-lang-ua="Місто" data-lang-en="City">Місто</h3>
+            <p data-lang-ua="Харків" data-lang-en="Kharkiv">Харків</p>
+            <h3 data-lang-ua="Номер телефону" data-lang-en="Phone Number">Номер телефону</h3>
+            <p>+38(095)-797-64-19</p>
+            <h3>Email</h3>
+            <p>vmaksakov92@gmail.com</p>
+
+            <!----------------------------------------------------------------Посилання на соц мережі-------------------------------------------------------------------->
+            <div id="social-icons-container">
+               <div id="social-icons">
+                  <a href="https://www.instagram.com/prosto_vlados.666/" target="_blank">
+                     <img src="Images/instagram-icon.png" alt="Instagram" loading="lazy">
+                  </a>
+                  <a href="https://t.me/vladislave_666" target="_blank">
+                     <img src="Images/telegram-icon.png" alt="Telegram" loading="lazy">
+                  </a>
+                  <a href="https://www.linkedin.com/in/владислав-максаков-b97384288" target="_blank">
+                     <img src="Images/linkedin-icon.png" alt="Linkedin" loading="lazy">
+                  </a>
+                  <a href="https://www.facebook.com/vlad.maksakov.1" target="_blank">
+                     <img src="Images/facebook-icon.png" alt="Facebook" loading="lazy">
+                  </a>
+                  <a href="https://github.com/VladislavMaksakov" target="_blank">
+                     <img src="Images/github-icon.png" alt="GitHub" loading="lazy">
+                  </a>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <div class="main-info">
+         <!----------------------------------------------------------------Секція про мене------------------------------------------------------------------------------->
+         <section id="experience">
+            <h3 data-lang-ua="Про себе" data-lang-en="About Me">Про себе</h3>
+            <p data-lang-ua="Я – молодий, активний та амбітний спеціаліст, який прагне постійного розвитку та вдосконалення своїх навичок. Легко і швидко засвоюю нову інформацію, адже завжди відчуваю інтерес до нових знань і викликів. З юності привчений до дисципліни та цілеспрямованості завдяки 6-річному досвіду у скелелазінні, який навчив мене долати труднощі та йти до мети попри перешкоди."
+               data-lang-en="I am young, active, and ambitious specialist who strives for continuous growth and improvement of my skills. I quickly and easily absorb new information, as I am always curious and eager to take on new knowledge and challenges. Since my youth, I have been disciplined and goal-oriented thanks to six years of experience in rock climbing, which taught me to overcome difficulties and pursue my goals despite obstacles.">
+               Я – молодий, активний та амбітний спеціаліст, який прагне постійного розвитку та вдосконалення своїх
+               навичок. Легко і швидко засвоюю нову інформацію, адже завжди відчуваю інтерес до нових знань і викликів.
+               З юності привчений до дисципліни та цілеспрямованості завдяки 6-річному досвіду у скелелазінні, який
+               навчив мене долати труднощі та йти до мети попри перешкоди.
+            </p>
+            <p data-lang-ua="Під час навчання в коледжі отримав підвищену стипендію за високі академічні досягнення. Зараз продовжую поглиблювати свої знання у сфері ІТ, навчаючись в університеті. З серпня працюю адміністратором баз даних, де маю змогу застосовувати теоретичні знання на практиці та вдосконалювати свої технічні навички."
+               data-lang-en="During my college studies, I received an increased scholarship for high academic performance. I am currently deepening my knowledge in the IT field while studying at university. Since August, I have been working as a database administrator, where I have the opportunity to apply theoretical knowledge in practice and enhance my technical skills.">
+               Під час навчання в коледжі отримав підвищену стипендію за високі академічні досягнення. Зараз продовжую
+               поглиблювати свої знання у сфері ІТ, навчаючись в університеті. З серпня працюю адміністратором баз
+               даних, де маю змогу застосовувати теоретичні знання на практиці та вдосконалювати свої технічні навички.
+            </p>
+            <p data-lang-ua="Я вважаю, що професійний розвиток – це постійний процес, тому я завжди відкритий до нових можливостей і готовий докладати максимум зусиль для досягнення високих результатів у своїй професії. Мені цікаво створювати щось нове, вирішувати складні задачі й бачити, як завдяки моїй праці реалізуються ідеї, що приносять користь і задоволення іншим."
+               data-lang-en="I believe that professional development is an ongoing process, which is why I am always open to new opportunities and ready to make every effort to achieve outstanding results in my profession. I enjoy creating new things, solving complex problems, and seeing how my work brings ideas to life—ideas that provide value and satisfaction to others.">
+               Я вважаю, що професійний розвиток – це постійний процес, тому я завжди відкритий до нових можливостей і
+               готовий докладати максимум зусиль для досягнення високих результатів у своїй професії. Мені цікаво
+               створювати щось нове, вирішувати складні задачі й бачити, як завдяки моїй праці реалізуються ідеї, що
+               приносять користь і задоволення іншим.
+            </p>
+         </section>
+
+         <!---------------------------------------------------------------------Навчання--------------------------------------------------------------------------------->
+         <section id="education">
+            <h2 data-lang-ua="Освіта" data-lang-en="Education">Освіта</h2>
+            <ul>
+               <div class="course-block">
+                  <h3 data-lang-ua="Харківський Національний Економічний Університет імені С. Кузнеця"
+                     data-lang-en="Kharkiv National Economic University named after S. Kuznets">Харківський Національний
+                     Економічний Університет імені С. Кузнеця</h3>
+                  <p data-lang-ua="121 'Інженерія ПЗ' | Навчаюсь" data-lang-en="121 'Software Engineering' | Studying">
+                     121 'Інженерія ПЗ' | Навчаюсь</p>
+               </div>
+               <div class="course-block">
+                  <h3 data-lang-ua="Харківський радіотехнічний коледж" data-lang-en="Kharkiv Radio Engineering College">
+                     Харківський радіотехнічний коледж</h3>
+                  <p data-lang-ua="121 'Інженерія ПЗ' | 28.06.2023"
+                     data-lang-en="121 'Software Engineering' | 28.06.2023">
+                     121 'Інженерія ПЗ' | 28.06.2023
+                  </p>
+                  <button class="cert-button" data-lang-ua="Мій диплом" data-lang-en="My Diploma"
+                     onclick="openUniversalModal('Images/Cert/Грамоти/Диплом.pdf')">
+                     Мій диплом
+                  </button>
+                  <button class="cert-button" data-lang-ua="Грамота" data-lang-en="Certificate"
+                     onclick="openUniversalModal('Images/Cert/Грамоти/Грамота_За_Рівень_Програмування.pdf')">
+                     Грамота
+                  </button>
+                  <button class="cert-button" data-lang-ua="Характеристика" data-lang-en="Characteristic"
+                     onclick="openUniversalModal('Images/Cert/Грамоти/Максаков_Характеристика.pdf')">
+                     Характеристика
+                  </button>
+               </div>
+               <div class="course-block">
+                  <h3 data-lang-ua="Онлайн школа 'HeadLight School'" data-lang-en="Online school 'HeadLight School'">
+                     Онлайн школа 'HeadLight School'
+                  </h3>
+                  <p>"Unity Developer" | 20.08.2022</p>
+                  <button class="cert-button" data-lang-ua="Сертифікат проходження курсів"
+                     data-lang-en="Certificate of completion of courses"
+                     onclick="openUniversalModal('Images/Cert/Грамоти/HeadLight_School.pdf')">Сертифікат проходження
+                     курсів</button>
+               </div>
+            </ul>
+         </section>
+
+         <!------------------------------------------------------------------Досвівд роботи------------------------------------------------------------------------------>
+         <section id="workExp">
+            <h2 data-lang-ua="Досвід роботи" data-lang-en="Work Experience">Досвід роботи</h2>
+
+            <div class="single-course">
+               <h3 data-lang-ua="Благодійна Організація «Благодійний Фонд «Карітас-Харків»"
+                  data-lang-en="Charitable Organization 'Caritas-Kharkiv'">
+                  Благодійна Організація «Благодійний Фонд «Карітас-Харків»
+               </h3>
+               <p data-lang-ua="Посада: Адміністратор баз даних (з серпня 2024 року)"
+                  data-lang-en="Position: Database Administrator (since August 2024)">
+                  Посада: Адміністратор баз даних (з серпня 2024 року)
+               </p>
+               <p data-lang-ua="«Карітас-Харків» – це благодійна організація, що надає допомогу людям, які опинилися в складних життєвих обставинах. Основними напрямками діяльності фонду є підтримка внутрішньо переміщених осіб, соціально незахищених верств населення, організація гуманітарної допомоги та реалізація проєктів, спрямованих на відновлення життєвих умов і психологічної стабільності."
+                  data-lang-en="'Caritas-Kharkiv' is a charitable organization providing assistance to people in difficult life circumstances. The fund’s main activities are supporting internally displaced persons, socially vulnerable groups, organizing humanitarian aid, and implementing projects aimed at restoring living conditions and psychological stability.">
+                  «Карітас-Харків» – це благодійна організація, що надає допомогу людям, які опинилися в складних
+                  життєвих обставинах. Основними напрямками діяльності фонду є підтримка внутрішньо переміщених осіб,
+                  соціально незахищених верств населення, організація гуманітарної допомоги та реалізація проєктів,
+                  спрямованих на відновлення життєвих умов і психологічної стабільності.
+               </p>
+               <p data-lang-ua="Моя роль у фонді:" data-lang-en="My role at the fund:">
+                  Моя роль у фонді:
+               </p>
+               <ul>
+                  <li data-lang-ua="Керування доступами для працівників до баз даних."
+                     data-lang-en="Managing employee access to databases.">Керування доступами для працівників до баз
+                     даних.</li>
+                  <li data-lang-ua="Перевірка коректності даних у базах."
+                     data-lang-en="Checking the correctness of database entries.">Перевірка коректності даних у базах.
+                  </li>
+                  <li data-lang-ua="Створення баз даних для зручного перегляду працівниками."
+                     data-lang-en="Creating databases for convenient employee access.">Створення баз даних для зручного
+                     перегляду працівниками.</li>
+                  <li data-lang-ua="Редагування та виправлення баз даних."
+                     data-lang-en="Editing and correcting database entries.">Редагування та виправлення баз даних.</li>
+                  <li data-lang-ua="Організація виплат бенефіціарам."
+                     data-lang-en="Organizing payments to beneficiaries.">Організація виплат бенефіціарам.</li>
+                  <li data-lang-ua="Облік гуманітарної допомоги в бухгалтерії."
+                     data-lang-en="Accounting for humanitarian aid in bookkeeping.">Облік гуманітарної допомоги в
+                     бухгалтерії.</li>
+                  <li data-lang-ua="Підготовка реєстрів." data-lang-en="Preparation of registers.">Підготовка реєстрів.
+                  </li>
+                  <li data-lang-ua="Звітування перед донорами та Карітас Україна."
+                     data-lang-en="Reporting to donors and Caritas Ukraine.">Звітування перед донорами та Карітас
+                     Україна.</li>
+               </ul>
+               <p data-lang-ua="Моя робота сприяє прозорості, точності та оперативності у виконанні гуманітарних місій організації."
+                  data-lang-en="My work promotes transparency, accuracy, and efficiency in the implementation of the organization's humanitarian missions.">
+                  Моя робота сприяє прозорості, точності та оперативності у виконанні гуманітарних місій організації.
+               </p>
+            </div>
+         </section>
+
+         <!-----------------------------------------------------------------------Скіли---------------------------------------------------------------------------------->
+         <section id="skills">
+            <h2 data-lang-ua="Навички" data-lang-en="Skills">Навички</h2>
+
+            <div class="course-block">
+               <h3 data-lang-ua="Мови програмування та технології"
+                  data-lang-en="Programming Languages and Technologies">Мови програмування та технології</h3>
+               <ul>
+                  <li data-lang-ua="Python, C#, JavaScript, Java, SQL – розробка програмного забезпечення, веб-додатків та аналітика даних."
+                     data-lang-en="Python, C#, JavaScript, Java, SQL – software development, web applications, and data analytics.">
+                     Python, C#, JavaScript, Java, SQL – розробка програмного забезпечення, веб-додатків та аналітика
+                     даних.</li>
+                  <li data-lang-ua="HTML, CSS – верстка веб-інтерфейсів."
+                     data-lang-en="HTML, CSS – web interface layout.">HTML, CSS – верстка веб-інтерфейсів.</li>
+                  <li data-lang-ua="T-SQL, MySQL, PostgreSQL, Microsoft SQL Server – написання складних SQL-запитів, процедур, тригерів, оптимізація баз даних."
+                     data-lang-en="T-SQL, MySQL, PostgreSQL, Microsoft SQL Server – writing complex SQL queries, procedures, triggers, and database optimization.">
+                     T-SQL, MySQL, PostgreSQL, Microsoft SQL Server – написання складних SQL-запитів, процедур,
+                     тригерів, оптимізація баз даних.</li>
+                  <li data-lang-ua="MongoDB – робота з NoSQL базами даних."
+                     data-lang-en="MongoDB – working with NoSQL databases.">MongoDB – робота з NoSQL базами даних.</li>
+               </ul>
+            </div>
+
+            <div class="course-block">
+               <h3 data-lang-ua="Обробка та аналіз даних" data-lang-en="Data Processing and Analysis">Обробка та аналіз
+                  даних</h3>
+               <ul>
+                  <li data-lang-ua="Power BI – створення інтерактивних звітів, візуалізація даних, BI-аналітика."
+                     data-lang-en="Power BI – creating interactive reports, data visualization, BI analytics.">Power BI
+                     – створення інтерактивних звітів, візуалізація даних, BI-аналітика.</li>
+                  <li data-lang-ua="Microsoft Excel, Google Sheets – глибокий рівень роботи, макроси (VBA), аналіз та візуалізація."
+                     data-lang-en="Microsoft Excel, Google Sheets – advanced usage, macros (VBA), analysis and visualization.">
+                     Microsoft Excel, Google Sheets – глибокий рівень роботи, макроси (VBA), аналіз та візуалізація.
+                  </li>
+                  <li data-lang-ua="Hadoop – обробка великих даних (Big Data)."
+                     data-lang-en="Hadoop – big data processing.">Hadoop – обробка великих даних (Big Data).</li>
+               </ul>
+            </div>
+
+            <div class="course-block">
+               <h3 data-lang-ua="Веб-розробка (Django)" data-lang-en="Web Development (Django)">Веб-розробка (Django)
+               </h3>
+               <ul>
+                  <li data-lang-ua="Створення повноцінних веб-додатків на Django (Frontend + Backend)."
+                     data-lang-en="Building full-fledged web applications with Django (Frontend + Backend).">Створення
+                     повноцінних веб-додатків на Django (Frontend + Backend).</li>
+                  <li data-lang-ua="Розробка REST API за допомогою Django Rest Framework."
+                     data-lang-en="Developing REST APIs with Django Rest Framework.">Розробка REST API за допомогою
+                     Django Rest Framework.</li>
+                  <li data-lang-ua="Побудова баз даних за допомогою ORM Django."
+                     data-lang-en="Database building using Django ORM.">Побудова баз даних за допомогою ORM Django.</li>
+                  <li data-lang-ua="Розгортання веб-проєктів на сервер."
+                     data-lang-en="Deploying web projects to a server.">Розгортання веб-проєктів на сервер.</li>
+               </ul>
+            </div>
+
+            <div class="course-block">
+               <h3 data-lang-ua="Комп’ютерні мережі та підтримка" data-lang-en="Computer Networks and Support">
+                  Комп’ютерні мережі та підтримка</h3>
+               <ul>
+                  <li data-lang-ua="Розуміння мережевих протоколів TCP/IP, DNS, HTTP/S."
+                     data-lang-en="Understanding network protocols TCP/IP, DNS, HTTP/S.">Розуміння мережевих протоколів
+                     TCP/IP, DNS, HTTP/S.</li>
+                  <li data-lang-ua="Базове налаштування комп'ютерних систем і діагностика проблем."
+                     data-lang-en="Basic configuration of computer systems and troubleshooting.">Базове налаштування
+                     комп'ютерних систем і діагностика проблем.</li>
+                  <li data-lang-ua="Побудова локальних мереж (LAN) та знання моделі OSI."
+                     data-lang-en="Building local networks (LAN) and understanding OSI model.">Побудова локальних мереж
+                     (LAN) та знання моделі OSI.</li>
+               </ul>
+            </div>
+
+            <div class="course-block">
+               <h3 data-lang-ua="Розробка програмного забезпечення" data-lang-en="Software Development">Розробка
+                  програмного забезпечення</h3>
+               <ul>
+                  <li data-lang-ua="Глибоке розуміння принципів об'єктно-орієнтованого програмування (ООП)."
+                     data-lang-en="Deep understanding of object-oriented programming (OOP) principles.">Глибоке
+                     розуміння принципів об'єктно-орієнтованого програмування (ООП).</li>
+                  <li data-lang-ua="Використання шаблонів проєктування для ефективної організації коду."
+                     data-lang-en="Using design patterns for effective code organization.">Використання шаблонів
+                     проєктування для ефективної організації коду.</li>
+                  <li data-lang-ua="Методології Scrum і Kanban для управління проєктами."
+                     data-lang-en="Scrum and Kanban methodologies for project management.">Методології Scrum і Kanban
+                     для управління проєктами.</li>
+                  <li data-lang-ua="Використання середовищ розробки: Visual Studio/Code, PyCharm, Unity."
+                     data-lang-en="Using development environments: Visual Studio/Code, PyCharm, Unity.">Використання
+                     середовищ розробки: Visual Studio/Code, PyCharm, Unity.</li>
+               </ul>
+            </div>
+
+            <div class="course-block">
+               <h3 data-lang-ua="Системи керування версіями" data-lang-en="Version Control Systems">Системи керування
+                  версіями</h3>
+               <ul>
+                  <li data-lang-ua="Володіння Git (GitHub) для ефективного управління проєктами."
+                     data-lang-en="Proficient in Git (GitHub) for effective project management.">Володіння Git (GitHub)
+                     для ефективного управління проєктами.</li>
+               </ul>
+            </div>
+
+            <div class="course-block">
+               <h3 data-lang-ua="Розробка ігор (Unity, C#)" data-lang-en="Game Development (Unity, C#)">Розробка ігор
+                  (Unity, C#)</h3>
+               <ul>
+                  <li data-lang-ua="Unity Engine – створення 2D/3D-ігор, робота з Unity API."
+                     data-lang-en="Unity Engine – creating 2D/3D games, working with Unity API.">Unity Engine –
+                     створення 2D/3D-ігор, робота з Unity API.</li>
+                  <li data-lang-ua="Штучний інтелект в іграх – налаштування NavMeshAgent, алгоритми навігації."
+                     data-lang-en="AI in games – setting up NavMeshAgent, navigation algorithms.">Штучний інтелект в
+                     іграх – налаштування NavMeshAgent, алгоритми навігації.</li>
+                  <li data-lang-ua="Фізика та взаємодія – Physics System, Raycasting, зіткнення, тригери."
+                     data-lang-en="Physics and interaction – Physics System, Raycasting, collisions, triggers.">Фізика
+                     та взаємодія – Physics System, Raycasting, зіткнення, тригери.</li>
+                  <li data-lang-ua="Анімація та візуальні ефекти – Animator Controller, Blend Trees, Particle System, Shader Graph."
+                     data-lang-en="Animation and visual effects – Animator Controller, Blend Trees, Particle System, Shader Graph.">
+                     Анімація та візуальні ефекти – Animator Controller, Blend Trees, Particle System, Shader Graph.
+                  </li>
+                  <li data-lang-ua="UI та UX в іграх – Canvas, Event System, інтерактивні елементи."
+                     data-lang-en="UI and UX in games – Canvas, Event System, interactive elements.">UI та UX в іграх –
+                     Canvas, Event System, інтерактивні елементи.</li>
+                  <li data-lang-ua="Оптимізація продуктивності – Profiler, Occlusion Culling, LOD."
+                     data-lang-en="Performance optimization – Profiler, Occlusion Culling, LOD.">Оптимізація
+                     продуктивності – Profiler, Occlusion Culling, LOD.</li>
+                  <li data-lang-ua="Мультиплеєр – Photon Unity Networking (PUN), Mirror."
+                     data-lang-en="Multiplayer – Photon Unity Networking (PUN), Mirror.">Мультиплеєр – Photon Unity
+                     Networking (PUN), Mirror.</li>
+                  <li data-lang-ua="Монетизація – інтеграція реклами, мікротранзакції."
+                     data-lang-en="Monetization – ad integration, microtransactions.">Монетизація – інтеграція реклами,
+                     мікротранзакції.</li>
+               </ul>
+            </div>
+
+            <div class="course-block">
+               <h3 data-lang-ua="Інструменти та програмне забезпечення" data-lang-en="Tools and Software">Інструменти та
+                  програмне забезпечення</h3>
+               <ul>
+                  <li data-lang-ua="Adobe Photoshop та Blender – графічний дизайн та 3D-моделювання."
+                     data-lang-en="Adobe Photoshop and Blender – graphic design and 3D modeling.">Adobe Photoshop та
+                     Blender – графічний дизайн та 3D-моделювання.</li>
+                  <li data-lang-ua="CoboCollect та CommCare – робота з базами даних і обробкою даних."
+                     data-lang-en="CoboCollect and CommCare – working with databases and data collection.">CoboCollect
+                     та CommCare – робота з базами даних і обробкою даних.</li>
+                  <li data-lang-ua="Розсилка повідомлень через Vodafone OBM."
+                     data-lang-en="Messaging via Vodafone OBM.">Розсилка повідомлень через Vodafone OBM.</li>
+                  <li data-lang-ua="Шифрування текстів різними алгоритмами."
+                     data-lang-en="Encrypting texts with different algorithms.">Шифрування текстів різними алгоритмами.
+                  </li>
+               </ul>
+            </div>
+
+            <div class="course-block">
+               <h3 data-lang-ua="Знання іноземних мов" data-lang-en="Knowledge of Foreign Languages">Знання іноземних
+                  мов</h3>
+               <ul>
+                  <li data-lang-ua="Англійська мова – B1 (Вивчаю)." data-lang-en="English – B1 (Learning).">Англійська
+                     мова – B1 (Вивчаю).</li>
+                  <li data-lang-ua="Італійська мова – A1 (Вивчаю)." data-lang-en="Italian – A1 (Learning).">Італійська
+                     мова – A1 (Вивчаю).</li>
+                  <li data-lang-ua="Німецька мова – A1." data-lang-en="German – A1.">Німецька мова – A1.</li>
+               </ul>
+            </div>
+
+            <div class="course-block">
+               <h3 data-lang-ua="Додаткові навички" data-lang-en="Additional Skills">Додаткові навички</h3>
+               <ul>
+                  <li data-lang-ua="Формування реєстрів та підготовка звітів."
+                     data-lang-en="Register formation and report preparation.">Формування реєстрів та підготовка звітів.
+                  </li>
+                  <li data-lang-ua="Високий рівень уважності до деталей та здатність працювати з великими обсягами інформації."
+                     data-lang-en="High attention to detail and ability to work with large volumes of information.">
+                     Високий рівень уважності до деталей та здатність працювати з великими обсягами інформації.</li>
+               </ul>
+            </div>
+         </section>
+      </div>
+   </div>
+</body>
+
+</html>
