@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
 
    // --- 1. MOBLIE MENU & CLOSE BUTTON FIX ---
+   // Цей блок відповідає за виїзне меню на мобільних пристроях
    const toggleButton = document.getElementById('menu-toggle');
    const sidebar = document.getElementById('sidebar');
    const topBar = document.querySelector('.top-bar');
@@ -11,12 +12,13 @@ document.addEventListener('DOMContentLoaded', function () {
       const pageLinks = document.getElementById('page-links');
       const profilePhoto = document.getElementById('profile-photo');
 
+      // Перевірка наявності елементів та запобігання дублюванню
       if (!sidebarContent || !pageLinks || document.querySelector('.mobile-links-wrapper')) return;
 
       const mobileLinksWrapper = document.createElement('div');
       mobileLinksWrapper.className = 'mobile-links-wrapper';
 
-      // Клонуємо посилання
+      // Клонуємо посилання з головної навігації для мобільної шторки
       const links = Array.from(pageLinks.querySelectorAll('a'));
       links.forEach(link => {
          const clonedLink = link.cloneNode(true);
@@ -24,11 +26,10 @@ document.addEventListener('DOMContentLoaded', function () {
          mobileLinksWrapper.appendChild(clonedLink);
       });
 
-      // Вставляємо ПІСЛЯ фотографії (щоб фото було зверху)
+      // Вставляємо посилання ПІСЛЯ фотографії, щоб вона залишалася зверху в меню
       if (profilePhoto && profilePhoto.nextSibling) {
          sidebarContent.insertBefore(mobileLinksWrapper, profilePhoto.nextSibling);
       } else {
-         // Якщо фото немає, просто на початок
          sidebarContent.insertBefore(mobileLinksWrapper, sidebarContent.firstChild);
       }
    }
@@ -37,8 +38,7 @@ document.addEventListener('DOMContentLoaded', function () {
       sidebar.classList.add('active');
       toggleButton.innerHTML = '✕';
 
-      // КРИТИЧНО: Переміщуємо кнопку в body, щоб вона стала поверх усього (z-index 2000)
-      // і не залежала від overflow/z-index хедера
+      // Переміщуємо кнопку в body, щоб вона була поверх усього (z-index 3000 в CSS)
       document.body.appendChild(toggleButton);
    }
 
@@ -47,10 +47,12 @@ document.addEventListener('DOMContentLoaded', function () {
       toggleButton.innerHTML = '☰';
 
       // Повертаємо кнопку назад в хедер
-      topBar.insertBefore(toggleButton, topBar.firstChild);
+      if (topBar) {
+         topBar.insertBefore(toggleButton, topBar.firstChild);
+      }
    }
 
-   // Запуск створення меню
+   // Створюємо мобільну навігацію при завантаженні
    initMobileMenu();
 
    if (toggleButton) {
@@ -64,7 +66,7 @@ document.addEventListener('DOMContentLoaded', function () {
       });
    }
 
-   // Закриття при кліку поза меню
+   // Закриття меню при кліку поза його межами
    document.addEventListener('click', (e) => {
       if (sidebar && sidebar.classList.contains('active') &&
          !sidebar.contains(e.target) &&
@@ -74,6 +76,7 @@ document.addEventListener('DOMContentLoaded', function () {
    });
 
    // --- 2. LANGUAGE LOGIC ---
+   // Логіка перемикання мов та збереження вибору в локальне сховище
    const langToggle = document.getElementById('language-toggle');
    const flag = document.getElementById('flag');
    const langText = document.getElementById('lang-text');
@@ -88,6 +91,7 @@ document.addEventListener('DOMContentLoaded', function () {
       if (langText) langText.innerText = lang === 'uk' ? 'English version' : 'Українська версія';
    }
 
+   // Встановлюємо мову при завантаженні
    updateLanguage(currentLang);
 
    if (langToggle) {
@@ -99,18 +103,22 @@ document.addEventListener('DOMContentLoaded', function () {
    }
 
    // --- 3. SMART HEADER ---
+   // Хедер ховається при скролі вниз і з'являється при скролі вгору
    let lastScrollTop = 0;
    window.addEventListener('scroll', function () {
       let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-      if (scrollTop > lastScrollTop && scrollTop > 100) {
-         topBar.classList.add('hidden-nav');
-      } else {
-         topBar.classList.remove('hidden-nav');
+      if (topBar) {
+         if (scrollTop > lastScrollTop && scrollTop > 100) {
+            topBar.classList.add('hidden-nav');
+         } else {
+            topBar.classList.remove('hidden-nav');
+         }
       }
       lastScrollTop = scrollTop;
    });
 
    // --- 4. SCROLL ANIMATIONS ---
+   // Плавна поява блоків, коли вони потрапляють у поле зору
    const observer = new IntersectionObserver((entries, obs) => {
       entries.forEach(entry => {
          if (entry.isIntersecting) {
@@ -124,10 +132,13 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 // --- 5. MODAL LOGIC (Global) ---
+// Функція для відкриття модального вікна з PDF або зображеннями
 function openUniversalModal(fileUrl) {
    const modal = document.getElementById("universalModal");
    const modalBody = document.getElementById("modalBody");
    const closeBtn = document.querySelector(".close");
+
+   if (!modal || !modalBody) return;
 
    modalBody.innerHTML = "";
    const fileExtension = fileUrl.split('.').pop().toLowerCase();
@@ -147,6 +158,12 @@ function openUniversalModal(fileUrl) {
    }
 
    modal.style.display = "block";
-   closeBtn.onclick = () => modal.style.display = "none";
-   window.onclick = (e) => { if (e.target === modal) modal.style.display = "none"; };
+
+   if (closeBtn) {
+      closeBtn.onclick = () => modal.style.display = "none";
+   }
+
+   window.onclick = (e) => {
+      if (e.target === modal) modal.style.display = "none";
+   };
 }
