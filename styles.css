@@ -123,10 +123,24 @@ h4 {
    font-size: 1.8rem;
    cursor: pointer;
 
-   /* Абсолютне позиціювання зліва */
+   /* Абсолютне позиціювання зліва в хедері */
    position: absolute;
    left: 20px;
    z-index: 1002;
+}
+
+/* --- ВАЖЛИВО: Стиль для хрестика, коли меню відкрите --- */
+/* JS переносить кнопку в body, щоб вона була поверх усього */
+body>#menu-toggle {
+   display: block;
+   position: fixed;
+   /* Фіксуємо на екрані */
+   top: 15px;
+   /* Вирівнюємо по висоті хедера */
+   left: 20px;
+   z-index: 2000;
+   /* Більше ніж z-index сайдбару (1500) */
+   color: white;
 }
 
 /* --- Навігація (Центрування) --- */
@@ -583,7 +597,6 @@ section h2::before {
 
    #menu-toggle {
       display: block;
-      /* Показуємо гамбургер */
    }
 
    #page-links {
@@ -593,44 +606,46 @@ section h2::before {
 
    #lang-text {
       display: none;
-      /* Ховаємо текст "Українська версія" */
    }
 
    #language-toggle {
       right: 15px;
    }
 
-   /* Сайдбар перетворюється на виїжджаюче меню (шторку) */
+   /* Сайдбар перетворюється на виїжджаюче меню */
    #sidebar {
       width: 85%;
       max-width: 320px;
       height: 100vh;
 
-      /* КЛЮЧОВЕ ВИПРАВЛЕННЯ: Позиціонування і трансформація */
+      /* Початковий стан: схований зліва */
       left: 0;
-      /* Було -100%, що ламало анімацію */
       transform: translateX(-100%);
-      /* Ховаємо вліво на 100% своєї ширини */
 
       transition: transform 0.3s ease-in-out;
-      z-index: 1001;
-      /* Поверх хедера */
+      z-index: 1500;
+      /* Менше ніж у кнопки закриття (2000), але більше за контент */
       box-shadow: 10px 0 30px rgba(0, 0, 0, 0.5);
+
       padding-top: 80px;
-      /* Місце зверху (під хрестик) */
+      /* Місце для кнопки закриття */
    }
 
-   /* Клас active додається через JS */
    #sidebar.active {
       transform: translateX(0);
-      /* Повертаємо на місце */
+      /* Виїжджає на екран */
    }
 
    /* Стилі для посилань, які JS перенесе в сайдбар */
    .mobile-links-wrapper {
       margin-bottom: 2rem;
+      margin-top: 1.5rem;
+      /* Відступ від фото */
       border-bottom: 1px solid rgba(255, 255, 255, 0.1);
       padding-bottom: 1rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      /* Лінія зверху */
+      padding-top: 1rem;
    }
 
    .mobile-links-wrapper a {
@@ -642,12 +657,12 @@ section h2::before {
       border-radius: 8px;
       margin-bottom: 5px;
       background: rgba(255, 255, 255, 0.05);
+      text-align: center;
    }
 
    .mobile-links-wrapper a:hover,
    .mobile-links-wrapper a.active {
       background: var(--accent);
-      transform: translateX(5px);
    }
 
    .mobile-links-wrapper .resume-button {
@@ -664,7 +679,6 @@ section h2::before {
       padding-top: calc(var(--header-height) + 1rem);
    }
 
-   /* Адаптація блоків досвіду */
    .work-header {
       flex-direction: column;
    }
