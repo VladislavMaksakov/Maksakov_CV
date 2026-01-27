@@ -102,7 +102,7 @@ h4 {
    display: flex;
    align-items: center;
    justify-content: center;
-   /* Центрування вмісту flex-контейнера */
+   /* Центрування вмісту */
 
    padding: 0 20px;
    z-index: 1000;
@@ -249,7 +249,7 @@ h4 {
    color: var(--accent);
 }
 
-/* --- Фото профілю (Виправлено) --- */
+/* --- Фото профілю --- */
 #profile-photo {
    width: 100%;
    max-width: 220px;
@@ -263,7 +263,7 @@ h4 {
    object-fit: contain;
 }
 
-/* --- Соц мережі (Виправлено: оригінальні іконки) --- */
+/* --- Соц мережі (Оригінальні іконки) --- */
 #social-icons {
    display: flex;
    justify-content: center;
@@ -287,12 +287,9 @@ h4 {
    width: 35px;
    height: 35px;
    object-fit: contain;
-
-   /* Чорно-білий фільтр за замовчуванням */
    filter: grayscale(100%);
    opacity: 0.7;
    transition: transform 0.2s, filter 0.2s;
-
    display: block;
 }
 
@@ -302,7 +299,6 @@ h4 {
 }
 
 #social-icons a:hover img {
-   /* Колір при наведенні */
    filter: grayscale(0%);
    opacity: 1;
    transform: scale(1.2);
@@ -610,8 +606,11 @@ section h2::before {
       max-width: 320px;
       height: 100vh;
 
-      /* Початковий стан: схований зліва */
-      left: -100%;
+      /* КЛЮЧОВЕ ВИПРАВЛЕННЯ: Позиціонування і трансформація */
+      left: 0;
+      /* Було -100%, що ламало анімацію */
+      transform: translateX(-100%);
+      /* Ховаємо вліво на 100% своєї ширини */
 
       transition: transform 0.3s ease-in-out;
       z-index: 1001;
@@ -623,8 +622,8 @@ section h2::before {
 
    /* Клас active додається через JS */
    #sidebar.active {
-      /* Оскільки left: -100%, то translateX(100%) ставить його в 0 (видно) */
-      transform: translateX(100%);
+      transform: translateX(0);
+      /* Повертаємо на місце */
    }
 
    /* Стилі для посилань, які JS перенесе в сайдбар */
