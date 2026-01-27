@@ -232,6 +232,11 @@ body>#menu-toggle {
    scrollbar-color: var(--accent) var(--bg-darker);
 }
 
+/* --- ВАЖЛИВО: Ховаємо мобільні посилання на десктопі --- */
+.mobile-links-wrapper {
+   display: none;
+}
+
 #sidebar h1 {
    font-size: 1.4rem;
    color: var(--text-white);
@@ -638,6 +643,8 @@ section h2::before {
 
    /* Стилі для посилань, які JS перенесе в сайдбар */
    .mobile-links-wrapper {
+      display: block;
+      /* ПОКАЗУЄМО на мобільному */
       margin-bottom: 2rem;
       margin-top: 1.5rem;
       /* Відступ від фото */
