@@ -3,28 +3,27 @@
 
 <head>
    <meta charset="UTF-8">
-   <title data-lang-ua="Завершені курси" data-lang-en="Completed Courses">Завершені курси</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title data-lang-ua="Мої проекти" data-lang-en="My Projects">Мої проекти</title>
    <link rel="stylesheet" href="styles.css">
    <script src="script.js" defer></script>
 </head>
 
-<!----------------------------------------------------------------------------Сайдбар------------------------------------------------------------------------------>
+<!-- Модальне вікно для перегляду сертифікатів/тез -->
 <div id="universalModal" class="modal">
    <span class="close">&times;</span>
    <div class="modal-body" id="modalBody"></div>
 </div>
 
 <body>
+   <!-- Top Bar (Header) -->
    <header class="top-bar">
-      <button id="menu-toggle">
-         ☰ <span id="menu-text" data-lang-ua="Портфоліо" data-lang-en="Portfolio">Портфоліо</span>
-      </button>
+      <button id="menu-toggle">☰</button>
 
       <nav id="page-links">
          <a href="index.html" data-lang-ua="Головна" data-lang-en="Home">Головна</a>
-         <a href="courses.html" data-lang-ua="Завершені курси" data-lang-en="Completed Courses">Завершені
-            курси</a>
-         <a href="projects.html" data-lang-ua="Мої проекти" data-lang-en="My Projects">Мої проекти</a>
+         <a href="courses.html" data-lang-ua="Завершені курси" data-lang-en="Completed Courses">Завершені курси</a>
+         <a href="projects.html" class="active" data-lang-ua="Мої проекти" data-lang-en="My Projects">Мої проекти</a>
          <a href="Maksakov_CV.pdf" download class="resume-button" data-lang-ua="Завантажити резюме"
             data-lang-en="Download Resume">Завантажити резюме</a>
       </nav>
@@ -34,230 +33,253 @@
          <span id="lang-text" data-lang-ua="Українська версія" data-lang-en="Ukrainian version">Українська версія</span>
       </button>
    </header>
+
    <div class="container">
-      <div id="sidebar">
+      <!-- Sidebar (Fixed Left) -->
+      <aside id="sidebar">
          <div id="sidebar-content">
             <img src="Images/MyPhoto.png" alt="Ваше фото" id="profile-photo">
+
             <h1 data-lang-ua="Особисті дані" data-lang-en="General information">Особисті дані</h1>
+
             <h3 data-lang-ua="ПІБ" data-lang-en="Full name">ПІБ</h3>
             <p data-lang-ua="Максаков Владислав Олександрович" data-lang-en="Maksakov Vladyslav">Максаков Владислав
                Олександрович</p>
+
             <h3 data-lang-ua="Дата народження" data-lang-en="Date of Birth">Дата народження</h3>
             <p>05.03.2004</p>
+
             <h3 data-lang-ua="Місто" data-lang-en="City">Місто</h3>
             <p data-lang-ua="Харків" data-lang-en="Kharkiv">Харків</p>
-            <h3 data-lang-ua="Номер телефону" data-lang-en="Phone Number">Номер телефону</h3>
-            <p>+38(095)-797-64-19</p>
-            <h3>Email</h3>
-            <p>vmaksakov92@gmail.com</p>
 
-            <!----------------------------------------------------------------Посилання на соц мережі-------------------------------------------------------------------->
-            <div id="social-icons-container">
-               <div id="social-icons">
-                  <a href="https://www.instagram.com/prosto_vlados.666/" target="_blank">
-                     <img src="Images/instagram-icon.png" alt="Instagram" loading="lazy">
-                  </a>
-                  <a href="https://t.me/vladislave_666" target="_blank">
-                     <img src="Images/telegram-icon.png" alt="Telegram" loading="lazy">
-                  </a>
-                  <a href="https://www.linkedin.com/in/владислав-максаков-b97384288" target="_blank">
-                     <img src="Images/linkedin-icon.png" alt="Linkedin" loading="lazy">
-                  </a>
-                  <a href="https://www.facebook.com/vlad.maksakov.1" target="_blank">
-                     <img src="Images/facebook-icon.png" alt="Facebook" loading="lazy">
-                  </a>
-                  <a href="https://github.com/VladislavMaksakov" target="_blank">
-                     <img src="Images/github-icon.png" alt="GitHub" loading="lazy">
-                  </a>
+            <h3 data-lang-ua="Номер телефону" data-lang-en="Phone Number">Номер телефону</h3>
+            <p><a href="tel:+380957976419">+38(095)-797-64-19</a></p>
+
+            <h3>Email</h3>
+            <p><a href="mailto:vmaksakov92@gmail.com">vmaksakov92@gmail.com</a></p>
+
+            <div id="social-icons">
+               <a href="https://www.instagram.com/prosto_vlados.666/" target="_blank"><img
+                     src="Images/instagram-icon.png" alt="Inst"></a>
+               <a href="https://t.me/vladislave_666" target="_blank"><img src="Images/telegram-icon.png" alt="TG"></a>
+               <a href="https://www.linkedin.com/in/владислав-максаков-b97384288" target="_blank"><img
+                     src="Images/linkedin-icon.png" alt="In"></a>
+               <a href="https://www.facebook.com/vlad.maksakov.1" target="_blank"><img src="Images/facebook-icon.png"
+                     alt="FB"></a>
+               <a href="https://github.com/VladislavMaksakov" target="_blank"><img src="Images/github-icon.png"
+                     alt="Git"></a>
+            </div>
+         </div>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="main-content">
+         <div class="main-info">
+
+            <!-- Game Jam 2023 - Under Tree -->
+            <div class="course-block animate-on-scroll">
+               <h3 data-lang-ua="2D симулятор коренеплодів «Under Tree» (C#, Unity)"
+                  data-lang-en="2D Root Simulator 'Under Tree' (C#, Unity)">
+                  2D симулятор коренеплодів «Under Tree» (C#, Unity)
+               </h3>
+               <div class="single-course">
+                  <p data-lang-ua="2D симулятор коренеплодів «Under Tree» – це командний проєкт, розроблений під час участі у Game Jam 2023 за допомогою рушія Unity та мови програмування C#. В рамках проєкту я займався створенням графічного інтерфейсу користувача (GUI), розробкою візуальних елементів ігрового меню та управлінням елементами взаємодії. Особливу увагу було приділено розробці поведінки ігрових персонажів – жуків: я реалізував штучний інтелект руху, налаштував алгоритми взаємодії жуків з коренеплодами, включаючи механіку пошкодження та поглинання ресурсів. Моя роль також включала активне тестування гри на всіх стадіях розробки, складання детальних баг-репортів і пропозицій щодо вдосконалення геймплею. Співпраця в команді вимагала використання навичок комунікації, гнучкості у прийнятті рішень і ефективного розподілу задач. Проєкт «Under Tree» став цінним досвідом інтеграції програмування, дизайну та командної розробки у стислі часові рамки."
+                     data-lang-en="The 2D root vegetable simulator 'Under Tree' is a team project developed during Game Jam 2023 using Unity and C#. Within the project, I was responsible for creating the graphical user interface (GUI), designing the game menu visuals, and implementing interactive control elements. A significant focus was placed on developing the AI behavior of beetles: I implemented movement patterns and programmed interactions with root vegetables, including damage and consumption mechanics. Additionally, I actively engaged in game testing across all development stages, writing detailed bug reports and suggesting gameplay improvements. Working in a team environment required strong communication skills, flexibility in decision-making, and effective task distribution. The 'Under Tree' project provided valuable experience in combining programming, design, and teamwork under tight deadlines.">
+                     2D симулятор коренеплодів «Under Tree» – це командний проєкт, розроблений під час участі у Game Jam
+                     2023 за допомогою рушія Unity та мови програмування C#. В рамках проєкту я займався створенням
+                     графічного інтерфейсу користувача (GUI), розробкою візуальних елементів ігрового меню та
+                     управлінням
+                     елементами взаємодії. Особливу увагу було приділено розробці поведінки ігрових персонажів – жуків:
+                     я
+                     реалізував штучний інтелект руху, налаштував алгоритми взаємодії жуків з коренеплодами, включаючи
+                     механіку пошкодження та поглинання ресурсів. Моя роль також включала активне тестування гри на всіх
+                     стадіях розробки, складання детальних баг-репортів і пропозицій щодо вдосконалення геймплею.
+                     Співпраця
+                     в команді вимагала використання навичок комунікації, гнучкості у прийнятті рішень і ефективного
+                     розподілу задач. Проєкт «Under Tree» став цінним досвідом інтеграції програмування, дизайну та
+                     командної розробки у стислі часові рамки.
+                  </p>
+                  <button class="cert-button"
+                     onclick="window.open('https://www.youtube.com/watch?v=fuEohfdGcgQ', '_blank')"
+                     data-lang-ua="Переглянути відео" data-lang-en="Watch Video">
+                     Переглянути відео
+                  </button>
+                  <button class="cert-button" data-lang-ua="Переглянути сертифікат" data-lang-en="View Certificate"
+                     onclick="openUniversalModal('Images/Cert/Грамоти/GlobalGameJam2023.pdf')">
+                     Переглянути сертифікат
+                  </button>
+                  <button class="cert-button"
+                     onclick="window.open('https://github.com/VladislavMaksakov/UnderTree', '_blank')"
+                     data-lang-ua="Переглянути репозиторій" data-lang-en="View Repository">
+                     Переглянути репозиторій
+                  </button>
                </div>
             </div>
-         </div>
-      </div>
 
-      <div class="main-info">
-         <!-- Game Jam 2023 - Under Tree -->
-         <div class="course-block">
-            <h3 data-lang-ua="2D симулятор коренеплодів «Under Tree» (C#, Unity)"
-               data-lang-en="2D Root Simulator 'Under Tree' (C#, Unity)">
-               2D симулятор коренеплодів «Under Tree» (C#, Unity)
-            </h3>
-            <div class="single-course">
-               <p data-lang-ua="2D симулятор коренеплодів «Under Tree» – це командний проєкт, розроблений під час участі у Game Jam 2023 за допомогою рушія Unity та мови програмування C#. В рамках проєкту я займався створенням графічного інтерфейсу користувача (GUI), розробкою візуальних елементів ігрового меню та управлінням елементами взаємодії. Особливу увагу було приділено розробці поведінки ігрових персонажів – жуків: я реалізував штучний інтелект руху, налаштував алгоритми взаємодії жуків з коренеплодами, включаючи механіку пошкодження та поглинання ресурсів. Моя роль також включала активне тестування гри на всіх стадіях розробки, складання детальних баг-репортів і пропозицій щодо вдосконалення геймплею. Співпраця в команді вимагала використання навичок комунікації, гнучкості у прийнятті рішень і ефективного розподілу задач. Проєкт «Under Tree» став цінним досвідом інтеграції програмування, дизайну та командної розробки у стислі часові рамки."
-                  data-lang-en="The 2D root vegetable simulator 'Under Tree' is a team project developed during Game Jam 2023 using Unity and C#. Within the project, I was responsible for creating the graphical user interface (GUI), designing the game menu visuals, and implementing interactive control elements. A significant focus was placed on developing the AI behavior of beetles: I implemented movement patterns and programmed interactions with root vegetables, including damage and consumption mechanics. Additionally, I actively engaged in game testing across all development stages, writing detailed bug reports and suggesting gameplay improvements. Working in a team environment required strong communication skills, flexibility in decision-making, and effective task distribution. The 'Under Tree' project provided valuable experience in combining programming, design, and teamwork under tight deadlines.">
-                  2D симулятор коренеплодів «Under Tree» – це командний проєкт, розроблений під час участі у Game Jam
-                  2023 за допомогою рушія Unity та мови програмування C#. В рамках проєкту я займався створенням
-                  графічного інтерфейсу користувача (GUI), розробкою візуальних елементів ігрового меню та управлінням
-                  елементами взаємодії. Особливу увагу було приділено розробці поведінки ігрових персонажів – жуків: я
-                  реалізував штучний інтелект руху, налаштував алгоритми взаємодії жуків з коренеплодами, включаючи
-                  механіку пошкодження та поглинання ресурсів. Моя роль також включала активне тестування гри на всіх
-                  стадіях розробки, складання детальних баг-репортів і пропозицій щодо вдосконалення геймплею. Співпраця
-                  в команді вимагала використання навичок комунікації, гнучкості у прийнятті рішень і ефективного
-                  розподілу задач. Проєкт «Under Tree» став цінним досвідом інтеграції програмування, дизайну та
-                  командної розробки у стислі часові рамки.
-               </p>
-               <button class="cert-button"
-                  onclick="window.open('https://www.youtube.com/watch?v=fuEohfdGcgQ', '_blank')"
-                  data-lang-ua="Переглянути відео" data-lang-en="Watch Video">
-                  Переглянути відео
-               </button>
-               <button class="cert-button" data-lang-ua="Переглянути сертифікат" data-lang-en="View Certificate"
-                  onclick="openUniversalModal('Images/Cert/Грамоти/GlobalGameJam2023.pdf')">
-                  Переглянути сертифікат
-               </button>
-               <button class="cert-button"
-                  onclick="window.open('https://github.com/VladislavMaksakov/UnderTree', '_blank')"
-                  data-lang-ua="Переглянути репозиторій" data-lang-en="View Repository">
-                  Переглянути репозиторій
-               </button>
+            <!-- Проєкт: Додаток для стиснення файлів -->
+            <div class="course-block animate-on-scroll">
+               <h3 data-lang-ua="Додаток для стиснення файлів (C#)" data-lang-en="File Compression App (C#)">
+                  Додаток для стиснення файлів (C#)
+               </h3>
+               <div class="single-course">
+                  <p data-lang-ua="Додаток для стиснення файлів – це індивідуальний навчальний проєкт, спрямований на створення функціонального рішення для зменшення розміру текстових, аудіо- та медіафайлів. Розробка здійснювалася мовою C# у середовищі Visual Studio із застосуванням структурованого підходу до архітектури додатка. Для стиснення текстових файлів я реалізував алгоритм Хаффмана – один із найефективніших методів побудови оптимальних префіксних кодів. Для роботи з аудіо- та медіа файлами були використані бібліотеки з пакету NuGet, зокрема 'NAudio', що дозволило інтегрувати обробку та стиснення медіаданих у додаток. Графічний інтерфейс користувача (GUI) реалізовано через Windows Forms, забезпечуючи інтуїтивно зрозумілу навігацію для вибору файлів і збереження результатів. Проєкт розвинув мої навички розробки алгоритмічних рішень, оптимізації ресурсів і побудови зручного користувацького інтерфейсу."
+                     data-lang-en="The File Compression Application is an individual educational project aimed at developing a functional solution for reducing the size of text, audio, and media files. The project was implemented in C# using Visual Studio, following a structured approach to application architecture. For text compression, I implemented the Huffman coding algorithm, a highly efficient method for building optimal prefix codes. For audio and media files, NuGet packages, particularly 'NAudio', were utilized to enable media data processing and compression. The graphical user interface (GUI) was developed using Windows Forms, providing intuitive navigation for file selection and saving. This project enhanced my skills in algorithmic development, resource optimization, and GUI design.">
+                     Додаток для стиснення файлів – це індивідуальний навчальний проєкт, спрямований на створення
+                     функціонального рішення для зменшення розміру текстових, аудіо- та медіафайлів. Розробка
+                     здійснювалася
+                     мовою C# у середовищі Visual Studio із застосуванням структурованого підходу до архітектури
+                     додатка.
+                     Для стиснення текстових файлів я реалізував алгоритм Хаффмана – один із найефективніших методів
+                     побудови оптимальних префіксних кодів. Для роботи з аудіо- та медіа файлами були використані
+                     бібліотеки з пакету NuGet, зокрема 'NAudio', що дозволило інтегрувати обробку та стиснення
+                     медіаданих
+                     у додаток. Графічний інтерфейс користувача (GUI) реалізовано через Windows Forms, забезпечуючи
+                     інтуїтивно зрозумілу навігацію для вибору файлів і збереження результатів. Проєкт розвинув мої
+                     навички
+                     розробки алгоритмічних рішень, оптимізації ресурсів і побудови зручного користувацького інтерфейсу.
+                  </p>
+                  <button class="cert-button" data-lang-ua="Переглянути сертифікат" data-lang-en="View Certificate"
+                     onclick="openUniversalModal('Images/Cert/Грамоти/Розробка_Алгоритму_Хоффмана.pdf')">
+                     Переглянути сертифікат
+                  </button>
+                  <button class="cert-button"
+                     onclick="window.open('https://github.com/VladislavMaksakov/CompressApp.git', '_blank')"
+                     data-lang-ua="Переглянути репозиторій" data-lang-en="View Repository">
+                     Переглянути репозиторій
+                  </button>
+
+                  <button class="cert-button" data-lang-ua="Переглянути тези" data-lang-en="View Thesis"
+                     onclick="openUniversalModal('Images/Cert/Грамоти/Максаков_Алгоритм_Хоффмана.pdf')">
+                     Переглянути тези
+                  </button>
+               </div>
             </div>
-         </div>
 
-         <!-- Проєкт: Додаток для стиснення файлів -->
-         <div class="course-block">
-            <h3 data-lang-ua="Додаток для стиснення файлів (C#)" data-lang-en="File Compression App (C#)">
-               Додаток для стиснення файлів (C#)
-            </h3>
-            <div class="single-course">
-               <p data-lang-ua="Додаток для стиснення файлів – це індивідуальний навчальний проєкт, спрямований на створення функціонального рішення для зменшення розміру текстових, аудіо- та медіафайлів. Розробка здійснювалася мовою C# у середовищі Visual Studio із застосуванням структурованого підходу до архітектури додатка. Для стиснення текстових файлів я реалізував алгоритм Хаффмана – один із найефективніших методів побудови оптимальних префіксних кодів. Для роботи з аудіо- та медіа файлами були використані бібліотеки з пакету NuGet, зокрема 'NAudio', що дозволило інтегрувати обробку та стиснення медіаданих у додаток. Графічний інтерфейс користувача (GUI) реалізовано через Windows Forms, забезпечуючи інтуїтивно зрозумілу навігацію для вибору файлів і збереження результатів. Проєкт розвинув мої навички розробки алгоритмічних рішень, оптимізації ресурсів і побудови зручного користувацького інтерфейсу."
-                  data-lang-en="The File Compression Application is an individual educational project aimed at developing a functional solution for reducing the size of text, audio, and media files. The project was implemented in C# using Visual Studio, following a structured approach to application architecture. For text compression, I implemented the Huffman coding algorithm, a highly efficient method for building optimal prefix codes. For audio and media files, NuGet packages, particularly 'NAudio', were utilized to enable media data processing and compression. The graphical user interface (GUI) was developed using Windows Forms, providing intuitive navigation for file selection and saving. This project enhanced my skills in algorithmic development, resource optimization, and GUI design.">
-                  Додаток для стиснення файлів – це індивідуальний навчальний проєкт, спрямований на створення
-                  функціонального рішення для зменшення розміру текстових, аудіо- та медіафайлів. Розробка здійснювалася
-                  мовою C# у середовищі Visual Studio із застосуванням структурованого підходу до архітектури додатка.
-                  Для стиснення текстових файлів я реалізував алгоритм Хаффмана – один із найефективніших методів
-                  побудови оптимальних префіксних кодів. Для роботи з аудіо- та медіа файлами були використані
-                  бібліотеки з пакету NuGet, зокрема 'NAudio', що дозволило інтегрувати обробку та стиснення медіаданих
-                  у додаток. Графічний інтерфейс користувача (GUI) реалізовано через Windows Forms, забезпечуючи
-                  інтуїтивно зрозумілу навігацію для вибору файлів і збереження результатів. Проєкт розвинув мої навички
-                  розробки алгоритмічних рішень, оптимізації ресурсів і побудови зручного користувацького інтерфейсу.
-               </p>
-               <button class="cert-button" data-lang-ua="Переглянути сертифікат" data-lang-en="View Certificate"
-                  onclick="openUniversalModal('Images/Cert/Грамоти/Розробка_Алгоритму_Хоффмана.pdf')">
-                  Переглянути сертифікат
-               </button>
-               <button class="cert-button"
-                  onclick="window.open('https://github.com/VladislavMaksakov/CompressApp.git', '_blank')"
-                  data-lang-ua="Переглянути репозиторій" data-lang-en="View Repository">
-                  Переглянути репозиторій
-               </button>
-
-               <button class="cert-button" data-lang-ua="Переглянути тези" data-lang-en="View Thesis"
-                  onclick="openUniversalModal('Images/Cert/Грамоти/Максаков_Алгоритм_Хоффмана.pdf')">
-                  Переглянути тези
-               </button>
+            <!-- 3D Survival Game -->
+            <div class="course-block animate-on-scroll">
+               <h3 data-lang-ua="3D Survival Game «Kill Or Die» (C#, Unity)"
+                  data-lang-en="3D Survival Game 'Kill Or Die' (C#, Unity)">
+                  3D Survival Game «Kill Or Die» (C#, Unity)
+               </h3>
+               <div class="single-course">
+                  <p data-lang-ua="3D Survival Game «Kill Or Die» – це комплексний проєкт, над яким я працював протягом трьох місяців, поєднуючи технічну інженерію з творчою реалізацією. У цьому проєкті я самостійно розробив музику для фонової атмосфери гри, застосувавши навички роботи з цифровими аудіостанціями (DAW) та інтеграції аудіотреків у геймплей. Графічна частина включала створення 3D-моделей і текстур оточення та ігрових об'єктів за допомогою Blender і Photoshop з подальшою оптимізацією для реального часу. З технічного боку я реалізував штучний інтелект ворогів за допомогою навігаційних агентів (NavMeshAgent), системи стрільби та взаємодії через Raycasting, синхронізацію візуальних і звукових ефектів через Animation Events, а також асинхронні механізми через Coroutines. Архітектура коду базується на принципах об'єктно-орієнтованого програмування (ООП) із застосуванням шаблонів Singleton, Factory та Observer для забезпечення масштабованості та підтримуваності проєкту. Я також оптимізував гру для роботи на різних пристроях, покращуючи продуктивність за рахунок обробки фізики, освітлення та постобробки сцени. Цей проєкт є яскравим прикладом моїх технічних і творчих здібностей, а також навичок проєктного менеджменту."
+                     data-lang-en="3D Survival Game 'Kill Or Die' is a comprehensive project that I developed over three months, combining technical engineering and creative realization. I independently composed the game's soundtrack using DAWs and integrated audio into the gameplay to enhance the immersive atmosphere. Graphically, I designed 3D models and textures for the environment and interactive objects using Blender and Photoshop, with subsequent real-time optimization. Technically, I implemented enemy AI with NavMeshAgents, interaction and shooting systems via Raycasting, synchronized visual and audio effects using Animation Events, and asynchronous mechanics through Coroutines. The code architecture follows object-oriented programming (OOP) principles and applies Singleton, Factory, and Observer patterns for scalability and maintainability. I also optimized the game's performance across multiple devices by enhancing physics, lighting, and post-processing systems. This project demonstrates my technical expertise, creativity, and project management skills.">
+                     3D Survival Game «Kill Or Die» – це комплексний проєкт, над яким я працював протягом трьох місяців,
+                     поєднуючи технічну інженерію з творчою реалізацією. У цьому проєкті я самостійно розробив музику
+                     для
+                     фонової атмосфери гри, застосувавши навички роботи з цифровими аудіостанціями (DAW) та інтеграції
+                     аудіотреків у геймплей. Графічна частина включала створення 3D-моделей і текстур оточення та
+                     ігрових
+                     об'єктів за допомогою Blender і Photoshop з подальшою оптимізацією для реального часу. З технічного
+                     боку я реалізував штучний інтелект ворогів за допомогою навігаційних агентів (NavMeshAgent),
+                     системи
+                     стрільби та взаємодії через Raycasting, синхронізацію візуальних і звукових ефектів через Animation
+                     Events, а також асинхронні механізми через Coroutines. Архітектура коду базується на принципах
+                     об'єктно-орієнтованого програмування (ООП) із застосуванням шаблонів Singleton, Factory та Observer
+                     для забезпечення масштабованості та підтримуваності проєкту. Я також оптимізував гру для роботи на
+                     різних пристроях, покращуючи продуктивність за рахунок обробки фізики, освітлення та постобробки
+                     сцени. Цей проєкт є яскравим прикладом моїх технічних і творчих здібностей, а також навичок
+                     проєктного
+                     менеджменту.
+                  </p>
+                  <button class="cert-button"
+                     onclick="window.open('https://github.com/VladislavMaksakov/KillOrDie', '_blank')"
+                     data-lang-ua="Переглянути репозиторій" data-lang-en="View Repository">
+                     Переглянути репозиторій
+                  </button>
+               </div>
             </div>
-         </div>
 
-         <!-- 3D Survival Game -->
-         <div class="course-block">
-            <h3 data-lang-ua="3D Survival Game «Kill Or Die» (C#, Unity)"
-               data-lang-en="3D Survival Game 'Kill Or Die' (C#, Unity)">
-               3D Survival Game «Kill Or Die» (C#, Unity)
-            </h3>
-            <div class="single-course">
-               <p data-lang-ua="3D Survival Game «Kill Or Die» – це комплексний проєкт, над яким я працював протягом трьох місяців, поєднуючи технічну інженерію з творчою реалізацією. У цьому проєкті я самостійно розробив музику для фонової атмосфери гри, застосувавши навички роботи з цифровими аудіостанціями (DAW) та інтеграції аудіотреків у геймплей. Графічна частина включала створення 3D-моделей і текстур оточення та ігрових об'єктів за допомогою Blender і Photoshop з подальшою оптимізацією для реального часу. З технічного боку я реалізував штучний інтелект ворогів за допомогою навігаційних агентів (NavMeshAgent), системи стрільби та взаємодії через Raycasting, синхронізацію візуальних і звукових ефектів через Animation Events, а також асинхронні механізми через Coroutines. Архітектура коду базується на принципах об'єктно-орієнтованого програмування (ООП) із застосуванням шаблонів Singleton, Factory та Observer для забезпечення масштабованості та підтримуваності проєкту. Я також оптимізував гру для роботи на різних пристроях, покращуючи продуктивність за рахунок обробки фізики, освітлення та постобробки сцени. Цей проєкт є яскравим прикладом моїх технічних і творчих здібностей, а також навичок проєктного менеджменту."
-                  data-lang-en="3D Survival Game 'Kill Or Die' is a comprehensive project that I developed over three months, combining technical engineering and creative realization. I independently composed the game's soundtrack using DAWs and integrated audio into the gameplay to enhance the immersive atmosphere. Graphically, I designed 3D models and textures for the environment and interactive objects using Blender and Photoshop, with subsequent real-time optimization. Technically, I implemented enemy AI with NavMeshAgents, interaction and shooting systems via Raycasting, synchronized visual and audio effects using Animation Events, and asynchronous mechanics through Coroutines. The code architecture follows object-oriented programming (OOP) principles and applies Singleton, Factory, and Observer patterns for scalability and maintainability. I also optimized the game's performance across multiple devices by enhancing physics, lighting, and post-processing systems. This project demonstrates my technical expertise, creativity, and project management skills.">
-                  3D Survival Game «Kill Or Die» – це комплексний проєкт, над яким я працював протягом трьох місяців,
-                  поєднуючи технічну інженерію з творчою реалізацією. У цьому проєкті я самостійно розробив музику для
-                  фонової атмосфери гри, застосувавши навички роботи з цифровими аудіостанціями (DAW) та інтеграції
-                  аудіотреків у геймплей. Графічна частина включала створення 3D-моделей і текстур оточення та ігрових
-                  об'єктів за допомогою Blender і Photoshop з подальшою оптимізацією для реального часу. З технічного
-                  боку я реалізував штучний інтелект ворогів за допомогою навігаційних агентів (NavMeshAgent), системи
-                  стрільби та взаємодії через Raycasting, синхронізацію візуальних і звукових ефектів через Animation
-                  Events, а також асинхронні механізми через Coroutines. Архітектура коду базується на принципах
-                  об'єктно-орієнтованого програмування (ООП) із застосуванням шаблонів Singleton, Factory та Observer
-                  для забезпечення масштабованості та підтримуваності проєкту. Я також оптимізував гру для роботи на
-                  різних пристроях, покращуючи продуктивність за рахунок обробки фізики, освітлення та постобробки
-                  сцени. Цей проєкт є яскравим прикладом моїх технічних і творчих здібностей, а також навичок проєктного
-                  менеджменту.
-               </p>
-               <button class="cert-button"
-                  onclick="window.open('https://github.com/VladislavMaksakov/KillOrDie', '_blank')"
-                  data-lang-ua="Переглянути репозиторій" data-lang-en="View Repository">
-                  Переглянути репозиторій
-               </button>
+            <!-- 2D Platformer RABBIT -->
+            <div class="course-block animate-on-scroll">
+               <h3 data-lang-ua="2D Платформер «RABBIT» (C#, Unity)" data-lang-en="2D Platformer 'RABBIT' (C#, Unity)">
+                  2D Платформер «RABBIT» (C#, Unity)
+               </h3>
+               <div class="single-course">
+                  <p data-lang-ua="2D платформер «RABBIT» – це завершений проєкт, реалізований на базі рушія Unity із використанням мови програмування C#. Гра демонструє комплексний підхід до розробки механік платформерів, включаючи налаштування руху персонажа через систему вводу Unity Input System та точне визначення колізій за допомогою фізичних алгоритмів. Управління анімаціями здійснюється через Animator Controller із динамічним переключенням станів на основі подій у коді. Система ворогів і бонусів створена із застосуванням ООП-принципів для забезпечення розширюваності ігрових механік. Використання PlayerPrefs API дозволяє зберігати і передавати дані між рівнями, що забезпечує цілісність прогресу гравця. Графічна складова проєкту включає створення та інтеграцію 2D-спрайтів, текстур і покадрових анімацій, а звукові ефекти, налаштовані через Unity Audio, покращують загальну атмосферу гри. Проєкт «RABBIT» відображає мої вміння в розробці ігрових механік, структуризації коду, оптимізації взаємодії між графікою, фізикою та логікою гри."
+                     data-lang-en="2D platformer 'RABBIT' is a completed project developed on the Unity engine using C#. The game showcases a comprehensive approach to designing platformer mechanics, including character movement implemented through Unity Input System and precise collision detection based on physics algorithms. Animation management is handled via Animator Controller, dynamically switching states based on code-driven events. The enemy and bonus systems are developed with OOP principles to ensure extensibility of game mechanics. PlayerPrefs API is utilized for saving and transferring player data across levels, maintaining gameplay continuity. The graphical components involve creating and integrating 2D sprites, textures, and frame-by-frame animations, while audio effects, managed through Unity Audio, enhance the immersive experience. The 'RABBIT' project highlights my abilities in game mechanic development, code structuring, and integrating graphics, physics, and logic into a cohesive product.">
+                     2D платформер «RABBIT» – це завершений проєкт, реалізований на базі рушія Unity із використанням
+                     мови
+                     програмування C#. Гра демонструє комплексний підхід до розробки механік платформерів, включаючи
+                     налаштування руху персонажа через систему вводу Unity Input System та точне визначення колізій за
+                     допомогою фізичних алгоритмів. Управління анімаціями здійснюється через Animator Controller із
+                     динамічним переключенням станів на основі подій у коді. Система ворогів і бонусів створена із
+                     застосуванням ООП-принципів для забезпечення розширюваності ігрових механік. Використання
+                     PlayerPrefs
+                     API дозволяє зберігати і передавати дані між рівнями, що забезпечує цілісність прогресу гравця.
+                     Графічна складова проєкту включає створення та інтеграцію 2D-спрайтів, текстур і покадрових
+                     анімацій,
+                     а звукові ефекти, налаштовані через Unity Audio, покращують загальну атмосферу гри. Проєкт «RABBIT»
+                     відображає мої вміння в розробці ігрових механік, структуризації коду, оптимізації взаємодії між
+                     графікою, фізикою та логікою гри.
+                  </p>
+                  <button class="cert-button"
+                     onclick="window.open('https://github.com/VladislavMaksakov/RABBIT', '_blank')"
+                     data-lang-ua="Переглянути репозиторій" data-lang-en="View Repository">
+                     Переглянути репозиторій
+                  </button>
+               </div>
             </div>
-         </div>
 
-         <!-- 2D Platformer RABBIT -->
-         <div class="course-block">
-            <h3 data-lang-ua="2D Платформер «RABBIT» (C#, Unity)" data-lang-en="2D Platformer 'RABBIT' (C#, Unity)">
-               2D Платформер «RABBIT» (C#, Unity)
-            </h3>
-            <div class="single-course">
-               <p data-lang-ua="2D платформер «RABBIT» – це завершений проєкт, реалізований на базі рушія Unity із використанням мови програмування C#. Гра демонструє комплексний підхід до розробки механік платформерів, включаючи налаштування руху персонажа через систему вводу Unity Input System та точне визначення колізій за допомогою фізичних алгоритмів. Управління анімаціями здійснюється через Animator Controller із динамічним переключенням станів на основі подій у коді. Система ворогів і бонусів створена із застосуванням ООП-принципів для забезпечення розширюваності ігрових механік. Використання PlayerPrefs API дозволяє зберігати і передавати дані між рівнями, що забезпечує цілісність прогресу гравця. Графічна складова проєкту включає створення та інтеграцію 2D-спрайтів, текстур і покадрових анімацій, а звукові ефекти, налаштовані через Unity Audio, покращують загальну атмосферу гри. Проєкт «RABBIT» відображає мої вміння в розробці ігрових механік, структуризації коду, оптимізації взаємодії між графікою, фізикою та логікою гри."
-                  data-lang-en="2D platformer 'RABBIT' is a completed project developed on the Unity engine using C#. The game showcases a comprehensive approach to designing platformer mechanics, including character movement implemented through Unity Input System and precise collision detection based on physics algorithms. Animation management is handled via Animator Controller, dynamically switching states based on code-driven events. The enemy and bonus systems are developed with OOP principles to ensure extensibility of game mechanics. PlayerPrefs API is utilized for saving and transferring player data across levels, maintaining gameplay continuity. The graphical components involve creating and integrating 2D sprites, textures, and frame-by-frame animations, while audio effects, managed through Unity Audio, enhance the immersive experience. The 'RABBIT' project highlights my abilities in game mechanic development, code structuring, and integrating graphics, physics, and logic into a cohesive product.">
-                  2D платформер «RABBIT» – це завершений проєкт, реалізований на базі рушія Unity із використанням мови
-                  програмування C#. Гра демонструє комплексний підхід до розробки механік платформерів, включаючи
-                  налаштування руху персонажа через систему вводу Unity Input System та точне визначення колізій за
-                  допомогою фізичних алгоритмів. Управління анімаціями здійснюється через Animator Controller із
-                  динамічним переключенням станів на основі подій у коді. Система ворогів і бонусів створена із
-                  застосуванням ООП-принципів для забезпечення розширюваності ігрових механік. Використання PlayerPrefs
-                  API дозволяє зберігати і передавати дані між рівнями, що забезпечує цілісність прогресу гравця.
-                  Графічна складова проєкту включає створення та інтеграцію 2D-спрайтів, текстур і покадрових анімацій,
-                  а звукові ефекти, налаштовані через Unity Audio, покращують загальну атмосферу гри. Проєкт «RABBIT»
-                  відображає мої вміння в розробці ігрових механік, структуризації коду, оптимізації взаємодії між
-                  графікою, фізикою та логікою гри.
-               </p>
-               <button class="cert-button"
-                  onclick="window.open('https://github.com/VladislavMaksakov/RABBIT', '_blank')"
-                  data-lang-ua="Переглянути репозиторій" data-lang-en="View Repository">
-                  Переглянути репозиторій
-               </button>
+            <!-- Проєкт: Лабораторна робота 6 -->
+            <div class="course-block animate-on-scroll">
+               <h3 data-lang-ua="Система керування базами даних (MySQL, TSQL)"
+                  data-lang-en="Database Management System (MySQL, TSQL)">
+                  Система керування базами даних (MySQL, TSQL)
+               </h3>
+               <div class="single-course">
+                  <p data-lang-ua="Проєкт 'Система керування базами даних' був реалізований у рамках навчальної програми для демонстрації навичок побудови й оптимізації баз даних за допомогою MySQL і TSQL. У цьому проєкті я розробив багатотабличну структуру бази даних, реалізував складні SQL-запити, створив збережені процедури, тригери та користувацькі функції. Інтерфейс програми дозволяв взаємодіяти з базою даних через DataGridView, що спрощувало перегляд і редагування записів. Я розробив логіку додавання даних із забезпеченням цілісності та нормалізації бази, а також системи фільтрації й сортування даних для гнучкого аналізу. Проєкт підкреслює мої знання SQL, навички створення ефективних запитів і побудови логічних структур даних."
+                     data-lang-en="The 'Database Management System' project was developed as part of an academic course to demonstrate skills in database design and optimization using MySQL and TSQL. I designed a multi-table database structure, implemented complex SQL queries, created stored procedures, triggers, and user-defined functions. The application's interface enabled interaction with the database via DataGridView, facilitating data visualization and editing. I developed logic for data addition while maintaining data integrity and normalization, and implemented filtering and sorting systems for flexible data analysis. This project highlights my expertise in SQL, efficient query writing, and logical data structuring.">
+                     Проєкт 'Система керування базами даних' був реалізований у рамках навчальної програми для
+                     демонстрації
+                     навичок побудови й оптимізації баз даних за допомогою MySQL і TSQL. У цьому проєкті я розробив
+                     багатотабличну структуру бази даних, реалізував складні SQL-запити, створив збережені процедури,
+                     тригери та користувацькі функції. Інтерфейс програми дозволяв взаємодіяти з базою даних через
+                     DataGridView, що спрощувало перегляд і редагування записів. Я розробив логіку додавання даних із
+                     забезпеченням цілісності та нормалізації бази, а також системи фільтрації й сортування даних для
+                     гнучкого аналізу. Проєкт підкреслює мої знання SQL, навички створення ефективних запитів і побудови
+                     логічних структур даних.
+                  </p>
+                  <button class="cert-button"
+                     onclick="window.open('https://github.com/VladislavMaksakov/LR-6', '_blank')"
+                     data-lang-ua="Переглянути репозиторій" data-lang-en="View Repository">
+                     Переглянути репозиторій
+                  </button>
+               </div>
             </div>
-         </div>
 
-         <!-- Проєкт: Лабораторна робота 6 -->
-         <div class="course-block">
-            <h3 data-lang-ua="Система керування базами даних (MySQL, TSQL)"
-               data-lang-en="Database Management System (MySQL, TSQL)">
-               Система керування базами даних (MySQL, TSQL)
-            </h3>
-            <div class="single-course">
-               <p data-lang-ua="Проєкт 'Система керування базами даних' був реалізований у рамках навчальної програми для демонстрації навичок побудови й оптимізації баз даних за допомогою MySQL і TSQL. У цьому проєкті я розробив багатотабличну структуру бази даних, реалізував складні SQL-запити, створив збережені процедури, тригери та користувацькі функції. Інтерфейс програми дозволяв взаємодіяти з базою даних через DataGridView, що спрощувало перегляд і редагування записів. Я розробив логіку додавання даних із забезпеченням цілісності та нормалізації бази, а також системи фільтрації й сортування даних для гнучкого аналізу. Проєкт підкреслює мої знання SQL, навички створення ефективних запитів і побудови логічних структур даних."
-                  data-lang-en="The 'Database Management System' project was developed as part of an academic course to demonstrate skills in database design and optimization using MySQL and TSQL. I designed a multi-table database structure, implemented complex SQL queries, created stored procedures, triggers, and user-defined functions. The application's interface enabled interaction with the database via DataGridView, facilitating data visualization and editing. I developed logic for data addition while maintaining data integrity and normalization, and implemented filtering and sorting systems for flexible data analysis. This project highlights my expertise in SQL, efficient query writing, and logical data structuring.">
-                  Проєкт 'Система керування базами даних' був реалізований у рамках навчальної програми для демонстрації
-                  навичок побудови й оптимізації баз даних за допомогою MySQL і TSQL. У цьому проєкті я розробив
-                  багатотабличну структуру бази даних, реалізував складні SQL-запити, створив збережені процедури,
-                  тригери та користувацькі функції. Інтерфейс програми дозволяв взаємодіяти з базою даних через
-                  DataGridView, що спрощувало перегляд і редагування записів. Я розробив логіку додавання даних із
-                  забезпеченням цілісності та нормалізації бази, а також системи фільтрації й сортування даних для
-                  гнучкого аналізу. Проєкт підкреслює мої знання SQL, навички створення ефективних запитів і побудови
-                  логічних структур даних.
-               </p>
-               <button class="cert-button" onclick="window.open('https://github.com/VladislavMaksakov/LR-6', '_blank')"
-                  data-lang-ua="Переглянути репозиторій" data-lang-en="View Repository">
-                  Переглянути репозиторій
-               </button>
+            <!-- Проєкт: Курсовий проект весна 2024 -->
+            <div class="course-block animate-on-scroll">
+               <h3 data-lang-ua="Курсовий проєкт: Управління побутовою технікою (C#)"
+                  data-lang-en="Course Project: Home Appliances Management (C#)">
+                  Курсовий проєкт: Управління побутовою технікою (C#)
+               </h3>
+               <div class="single-course">
+                  <p data-lang-ua="Курсовий проєкт весни 2024 року — це консольний додаток для управління даними про побутову техніку, розроблений мовою C#. Основним завданням було створення ефективної системи обліку із підтримкою повного циклу CRUD-операцій (створення, читання, оновлення, видалення даних). Додаток використовує локальну файлову систему для збереження даних і дозволяє генерувати звітні таблиці для подальшого аналізу. Окрім основних функцій управління даними, в проєкті реалізовані спеціальні формули для розрахунку цін, що демонструє вміння працювати з бізнес-логікою в програмних рішеннях. Код побудовано за принципами об'єктно-орієнтованого програмування (ООП), що забезпечує гнучкість і масштабованість. Проєкт дозволив мені закріпити навички розробки консольних додатків, організації даних та реалізації складних функціональних вимог."
+                     data-lang-en="The Spring 2024 course project is a console application for managing home appliance data, developed in C#. The primary objective was to create an efficient record-keeping system supporting the full cycle of CRUD operations (create, read, update, delete). The application uses the local file system to store data and can generate report tables for further analysis. In addition to basic data management features, the project implements special formulas for price calculations, showcasing my ability to handle business logic in software solutions. The code is built following object-oriented programming (OOP) principles, ensuring flexibility and scalability. This project strengthened my skills in developing console applications, organizing data, and meeting complex functional requirements.">
+                     Курсовий проєкт весни 2024 року — це консольний додаток для управління даними про побутову техніку,
+                     розроблений мовою C#. Основним завданням було створення ефективної системи обліку із підтримкою
+                     повного циклу CRUD-операцій (створення, читання, оновлення, видалення даних). Додаток використовує
+                     локальну файлову систему для збереження даних і дозволяє генерувати звітні таблиці для подальшого
+                     аналізу. Окрім основних функцій управління даними, в проєкті реалізовані спеціальні формули для
+                     розрахунку цін, що демонструє вміння працювати з бізнес-логікою в програмних рішеннях. Код
+                     побудовано
+                     за принципами об'єктно-орієнтованого програмування (ООП), що забезпечує гнучкість і
+                     масштабованість.
+                     Проєкт дозволив мені закріпити навички розробки консольних додатків, організації даних та
+                     реалізації
+                     складних функціональних вимог.
+                  </p>
+                  <button class="cert-button"
+                     onclick="window.open('https://github.com/VladislavMaksakov/Kursach_spring_2024', '_blank')"
+                     data-lang-ua="Переглянути репозиторій" data-lang-en="View Repository">
+                     Переглянути репозиторій
+                  </button>
+               </div>
             </div>
-         </div>
 
-         <!-- Проєкт: Курсовий проект весна 2024 -->
-         <div class="course-block">
-            <h3 data-lang-ua="Курсовий проєкт: Управління побутовою технікою (C#)"
-               data-lang-en="Course Project: Home Appliances Management (C#)">
-               Курсовий проєкт: Управління побутовою технікою (C#)
-            </h3>
-            <div class="single-course">
-               <p data-lang-ua="Курсовий проєкт весни 2024 року — це консольний додаток для управління даними про побутову техніку, розроблений мовою C#. Основним завданням було створення ефективної системи обліку із підтримкою повного циклу CRUD-операцій (створення, читання, оновлення, видалення даних). Додаток використовує локальну файлову систему для збереження даних і дозволяє генерувати звітні таблиці для подальшого аналізу. Окрім основних функцій управління даними, в проєкті реалізовані спеціальні формули для розрахунку цін, що демонструє вміння працювати з бізнес-логікою в програмних рішеннях. Код побудовано за принципами об'єктно-орієнтованого програмування (ООП), що забезпечує гнучкість і масштабованість. Проєкт дозволив мені закріпити навички розробки консольних додатків, організації даних та реалізації складних функціональних вимог."
-                  data-lang-en="The Spring 2024 course project is a console application for managing home appliance data, developed in C#. The primary objective was to create an efficient record-keeping system supporting the full cycle of CRUD operations (create, read, update, delete). The application uses the local file system to store data and can generate report tables for further analysis. In addition to basic data management features, the project implements special formulas for price calculations, showcasing my ability to handle business logic in software solutions. The code is built following object-oriented programming (OOP) principles, ensuring flexibility and scalability. This project strengthened my skills in developing console applications, organizing data, and meeting complex functional requirements.">
-                  Курсовий проєкт весни 2024 року — це консольний додаток для управління даними про побутову техніку,
-                  розроблений мовою C#. Основним завданням було створення ефективної системи обліку із підтримкою
-                  повного циклу CRUD-операцій (створення, читання, оновлення, видалення даних). Додаток використовує
-                  локальну файлову систему для збереження даних і дозволяє генерувати звітні таблиці для подальшого
-                  аналізу. Окрім основних функцій управління даними, в проєкті реалізовані спеціальні формули для
-                  розрахунку цін, що демонструє вміння працювати з бізнес-логікою в програмних рішеннях. Код побудовано
-                  за принципами об'єктно-орієнтованого програмування (ООП), що забезпечує гнучкість і масштабованість.
-                  Проєкт дозволив мені закріпити навички розробки консольних додатків, організації даних та реалізації
-                  складних функціональних вимог.
-               </p>
-               <button class="cert-button"
-                  onclick="window.open('https://github.com/VladislavMaksakov/Kursach_spring_2024', '_blank')"
-                  data-lang-ua="Переглянути репозиторій" data-lang-en="View Repository">
-                  Переглянути репозиторій
-               </button>
-            </div>
          </div>
-      </div>
+      </main>
    </div>
 </body>
 
