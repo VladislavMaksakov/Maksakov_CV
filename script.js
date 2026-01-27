@@ -11,10 +11,8 @@ document.addEventListener('DOMContentLoaded', function () {
       document.querySelectorAll('[data-lang-ua], [data-lang-en]').forEach(el => {
          el.innerText = lang === 'uk' ? el.getAttribute('data-lang-ua') : el.getAttribute('data-lang-en');
       });
-      flag.src = lang === 'uk' ? 'Images/uk.png' : 'Images/ua.png';
-      if (langText) {
-         langText.innerText = lang === 'uk' ? 'English version' : 'Українська версія';
-      }
+      if (flag) flag.src = lang === 'uk' ? 'Images/uk.png' : 'Images/ua.png';
+      if (langText) langText.innerText = lang === 'uk' ? 'English version' : 'Українська версія';
    }
 
    updateLanguage(currentLang);
@@ -27,75 +25,93 @@ document.addEventListener('DOMContentLoaded', function () {
       });
    }
 
-   // --- 2. MOBILE MENU & SIDEBAR LOGIC ---
+   // --- 2. MOBILE MENU LOGIC (NEW) ---
    const toggleButton = document.getElementById('menu-toggle');
    const sidebar = document.getElementById('sidebar');
-   const pageLinks = document.getElementById('page-links');
-   const topBar = document.querySelector('.top-bar');
 
+   // Функція для копіювання посилань в сайдбар для мобільного
+   function initMobileMenu() {
+      const sidebarContent = document.getElementById('sidebar-content');
+      const pageLinks = document.getElementById('page-links');
+
+      // Перевіряємо, чи вже створено (щоб не дублювати)
+      if (!sidebarContent || !pageLinks || document.querySelector('.mobile-links-wrapper')) return;
+
+      const mobileLinksWrapper = document.createElement('div');
+      mobileLinksWrapper.className = 'mobile-links-wrapper';
+
+      // Клонуємо посилання
+      const links = Array.from(pageLinks.querySelectorAll('a'));
+      links.forEach(link => {
+         const clonedLink = link.cloneNode(true);
+         // Закривати меню при кліку на посилання
+         clonedLink.addEventListener('click', () => {
+            sidebar.classList.remove('active');
+            toggleButton.innerHTML = '☰';
+         });
+         mobileLinksWrapper.appendChild(clonedLink);
+      });
+
+      // Вставляємо на самий верх сайдбару
+      sidebarContent.insertBefore(mobileLinksWrapper, sidebarContent.firstChild);
+   }
+
+   // Запускаємо ініціалізацію мобільного меню
+   initMobileMenu();
+
+   // Обробник кліку на гамбургер
    if (toggleButton) {
       toggleButton.addEventListener('click', (e) => {
-         e.stopPropagation(); // Prevent immediate closing
-
-         // Toggle Sidebar
+         e.stopPropagation();
          sidebar.classList.toggle('active');
 
-         // Toggle Mobile Navigation Links (if we want them in a dropdown)
-         // Or usually on mobile, the button toggles the sidebar. 
-         // Let's make the button toggle the Sidebar AND Navigation for mobile.
-         document.body.classList.toggle('mobile-nav-active');
-
-         // Change icon
-         const menuText = toggleButton.querySelector('#menu-text');
+         // Зміна іконки
          if (sidebar.classList.contains('active')) {
             toggleButton.innerHTML = '✕';
+            toggleButton.style.position = 'fixed'; // Щоб хрестик не втік при скролі сайдбару
          } else {
-            toggleButton.innerHTML = `☰ <span id="menu-text" ...></span>`;
-            // Restore text logic if needed, simpler to just use icon
-            toggleButton.innerText = '☰';
+            toggleButton.innerHTML = '☰';
+            toggleButton.style.position = 'absolute';
          }
       });
    }
 
-   // Close sidebar when clicking outside
+   // Закриття при кліку поза меню
    document.addEventListener('click', (e) => {
       if (sidebar && sidebar.classList.contains('active') &&
          !sidebar.contains(e.target) &&
          e.target !== toggleButton) {
          sidebar.classList.remove('active');
-         document.body.classList.remove('mobile-nav-active');
-         toggleButton.innerText = '☰';
+         toggleButton.innerHTML = '☰';
+         toggleButton.style.position = 'absolute';
       }
    });
 
-   // --- 3. SMART HEADER (HIDE ON SCROLL DOWN) ---
+   // --- 3. SMART HEADER ---
    let lastScrollTop = 0;
+   const topBar = document.querySelector('.top-bar');
    window.addEventListener('scroll', function () {
       let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
       if (scrollTop > lastScrollTop && scrollTop > 100) {
-         // Scroll Down > 100px -> Hide
          topBar.classList.add('hidden-nav');
       } else {
-         // Scroll Up -> Show
          topBar.classList.remove('hidden-nav');
       }
       lastScrollTop = scrollTop;
    });
 
-   // --- 4. SCROLL ANIMATIONS (INTERSECTION OBSERVER) ---
-   // Select elements to animate. Note: You need to add the class 'animate-on-scroll' to HTML elements.
+   // --- 4. SCROLL ANIMATIONS ---
    const observerOptions = {
       root: null,
       rootMargin: '0px',
-      threshold: 0.1 // Trigger when 10% of the element is visible
+      threshold: 0.1
    };
 
    const observer = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
          if (entry.isIntersecting) {
             entry.target.classList.add('is-visible');
-            observer.unobserve(entry.target); // Animate only once
+            observer.unobserve(entry.target);
          }
       });
    }, observerOptions);
@@ -104,7 +120,7 @@ document.addEventListener('DOMContentLoaded', function () {
    animatedElements.forEach(el => observer.observe(el));
 });
 
-// --- 5. MODAL LOGIC (Global Scope) ---
+// --- 5. MODAL LOGIC ---
 function openUniversalModal(fileUrl) {
    const modal = document.getElementById("universalModal");
    const modalBody = document.getElementById("modalBody");

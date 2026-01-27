@@ -2,7 +2,7 @@
    1. ROOT VARIABLES & RESET
    ========================================= */
 :root {
-   /* Colors */
+   /* Кольорова палітра */
    --bg-body: #f4f7f6;
    --bg-white: #ffffff;
    --bg-dark: #2c3e50;
@@ -17,16 +17,17 @@
 
    --border: #e0e0e0;
 
-   /* Shadows */
+   /* Тіні */
    --shadow-sm: 0 2px 5px rgba(0, 0, 0, 0.05);
    --shadow-md: 0 5px 15px rgba(0, 0, 0, 0.1);
+   --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.15);
 
-   /* Spacing & Sizes */
+   /* Розміри */
    --sidebar-width: 280px;
    --header-height: 60px;
    --radius: 12px;
 
-   /* Transitions */
+   /* Анімація */
    --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
@@ -71,7 +72,7 @@ h4 {
    padding-top: 0;
 }
 
-/* Main Content Area */
+/* Основний контент */
 .main-content {
    flex: 1;
    padding: 2rem;
@@ -98,11 +99,10 @@ h4 {
    background-color: var(--bg-dark);
    color: var(--text-white);
 
-   /* Використовуємо flex для вирівнювання, але елементи позиціонуємо абсолютно */
    display: flex;
    align-items: center;
    justify-content: center;
-   /* Центруємо вміст */
+   /* Центрування вмісту flex-контейнера */
 
    padding: 0 20px;
    z-index: 1000;
@@ -110,6 +110,7 @@ h4 {
    transition: transform 0.3s ease-in-out;
 }
 
+/* Клас для приховування хедера при скролі */
 .top-bar.hidden-nav {
    transform: translateY(-100%);
 }
@@ -119,27 +120,24 @@ h4 {
    background: none;
    border: none;
    color: white;
-   font-size: 1.5rem;
+   font-size: 1.8rem;
    cursor: pointer;
 
-   /* Фіксуємо зліва */
+   /* Абсолютне позиціювання зліва */
    position: absolute;
    left: 20px;
    z-index: 1002;
 }
 
-/* --- Navigation Centering Fix --- */
+/* --- Навігація (Центрування) --- */
 #page-links {
    display: flex;
    gap: 15px;
 
-   /* Жорстке центрування */
+   /* Жорстке центрування по середині екрану */
    position: absolute;
-   /* Вириваємо з потоку */
    left: 50%;
-   /* Ставимо в центр */
    transform: translateX(-50%);
-   /* Зсуваємо на половину власної ширини назад */
 }
 
 #page-links a {
@@ -167,6 +165,7 @@ h4 {
    box-shadow: 0 4px 12px rgba(108, 99, 255, 0.4);
 }
 
+/* --- Перемикач мови (Справа) --- */
 #language-toggle {
    display: flex;
    align-items: center;
@@ -177,16 +176,17 @@ h4 {
    cursor: pointer;
    font-weight: 500;
    padding: 5px 10px;
-   border-radius: 20px;
-   transition: var(--transition);
 
-   /* Фіксуємо справа */
+   /* Абсолютне позиціювання справа */
    position: absolute;
    right: 20px;
+
+   transition: var(--transition);
 }
 
 #language-toggle:hover {
    background-color: rgba(255, 255, 255, 0.1);
+   border-radius: 20px;
 }
 
 #language-toggle img {
@@ -210,7 +210,7 @@ h4 {
    overflow-y: auto;
    z-index: 900;
 
-   /* Відступ зверху, щоб хедер не перекривав контент */
+   /* Відступ зверху під хедер */
    padding: calc(var(--header-height) + 2rem) 1.5rem 2rem 1.5rem;
 
    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
@@ -249,26 +249,21 @@ h4 {
    color: var(--accent);
 }
 
-/* --- Profile Photo Fix --- */
+/* --- Фото профілю (Виправлено) --- */
 #profile-photo {
    width: 100%;
-   /* Заповнює ширину контейнера сайдбару */
    max-width: 220px;
-   /* Обмеження, щоб не було занадто великим на великих екранах */
    height: auto;
-   /* Зберігає пропорції */
    display: block;
    margin: 0 auto 1.5rem auto;
 
-   /* Рамка під стиль (фіолетова) */
+   /* Рамка під стиль */
    border: 5px solid var(--accent);
    border-radius: 0;
-   /* Квадратне */
-   box-shadow: none;
    object-fit: contain;
 }
 
-/* --- Social Icons Fix (Original Style) --- */
+/* --- Соц мережі (Виправлено: оригінальні іконки) --- */
 #social-icons {
    display: flex;
    justify-content: center;
@@ -279,54 +274,44 @@ h4 {
 }
 
 #social-icons a {
-   /* Прибираємо білі кружечки та фони */
    display: inline-block;
    width: auto;
    height: auto;
-   background-color: transparent;
+   background: transparent;
    border-radius: 0;
    padding: 0;
    transition: var(--transition);
 }
 
 #social-icons img {
-   /* Розмір іконок */
    width: 35px;
    height: 35px;
-
-   /* Стиль */
    object-fit: contain;
-   display: block;
-   border-radius: 0;
-   /* Прибираємо примусове заокруглення, якщо було */
 
-   /* Можна додати легкий фільтр для стилю, або прибрати, якщо хочете кольорові */
+   /* Чорно-білий фільтр за замовчуванням */
    filter: grayscale(100%);
    opacity: 0.7;
    transition: transform 0.2s, filter 0.2s;
+
+   display: block;
 }
 
 #social-icons a:hover {
    background-color: transparent;
-   /* Прибираємо фон при наведенні */
    transform: none;
-   /* Трансформація на картинці */
 }
 
 #social-icons a:hover img {
+   /* Колір при наведенні */
    filter: grayscale(0%);
-   /* Повертаємо колір */
    opacity: 1;
    transform: scale(1.2);
 }
 
 /* =========================================
-   5. SECTIONS & CONTENT
+   5. SECTIONS & CONTENT BLOCKS
    ========================================= */
 section {
-   background: transparent;
-   border: none;
-   box-shadow: none;
    margin-bottom: 4rem;
    padding: 0;
 }
@@ -369,9 +354,7 @@ section h2::before {
    border-color: var(--accent);
 }
 
-/* =========================================
-   6. BUTTONS
-   ========================================= */
+/* Кнопки */
 .cert-button {
    background-color: var(--accent);
    color: white;
@@ -400,13 +383,10 @@ section h2::before {
 }
 
 /* =========================================
-   7. ANIMATIONS (Stabilized)
+   6. ANIMATIONS
    ========================================= */
-/* Якщо JS не спрацював, елемент буде видимим завдяки opacity: 1 (fallback), 
-   але ми використовуємо клас .is-visible для запуску руху */
 .animate-on-scroll {
    opacity: 0;
-   /* Приховано за замовчуванням */
    transform: translateY(30px);
    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
@@ -417,7 +397,7 @@ section h2::before {
 }
 
 /* =========================================
-   8. WORK EXPERIENCE STYLES
+   7. WORK EXPERIENCE STYLES
    ========================================= */
 .work-header {
    margin-bottom: 1.5rem;
@@ -542,7 +522,7 @@ section h2::before {
 }
 
 /* =========================================
-   9. MODAL
+   8. MODAL
    ========================================= */
 .modal {
    display: none;
@@ -595,89 +575,97 @@ section h2::before {
 }
 
 /* =========================================
-   10. RESPONSIVE MEDIA QUERIES
+   9. MOBILE ADAPTATION (FIXED)
    ========================================= */
-@media (max-width: 1024px) {
-   /* Невеликі зміни для планшетів */
-}
-
 @media (max-width: 850px) {
-   /* MOBILE/TABLET LAYOUT SWITCH */
 
+   /* Хедер на мобільному */
    .top-bar {
       padding: 0 15px;
-      /* На мобільному position absolute для посилань може заважати, 
-           тому тут змінюємо поведінку */
+      justify-content: center;
    }
 
    #menu-toggle {
       display: block;
-      font-size: 1.8rem;
+      /* Показуємо гамбургер */
    }
 
    #page-links {
       display: none;
-      /* Desktop menu hidden */
-      position: static;
-      /* Скидаємо позиціонування для мобільного випадаючого меню */
-      transform: none;
+      /* Ховаємо десктопне меню */
    }
 
    #lang-text {
       display: none;
+      /* Ховаємо текст "Українська версія" */
    }
 
    #language-toggle {
       right: 15px;
-      /* Залишаємо кнопку мови справа */
    }
 
-   /* Сайдбар стає виїжджаючим меню */
+   /* Сайдбар перетворюється на виїжджаюче меню (шторку) */
    #sidebar {
-      width: 280px;
-      left: -280px;
-      /* Схований */
+      width: 85%;
+      max-width: 320px;
+      height: 100vh;
+
+      /* Початковий стан: схований зліва */
+      left: -100%;
+
       transition: transform 0.3s ease-in-out;
-      box-shadow: 5px 0 15px rgba(0, 0, 0, 0.2);
+      z-index: 1001;
+      /* Поверх хедера */
+      box-shadow: 10px 0 30px rgba(0, 0, 0, 0.5);
+      padding-top: 80px;
+      /* Місце зверху (під хрестик) */
    }
 
+   /* Клас active додається через JS */
    #sidebar.active {
-      transform: translateX(280px);
-      /* Виїжджає */
+      /* Оскільки left: -100%, то translateX(100%) ставить його в 0 (видно) */
+      transform: translateX(100%);
    }
 
-   /* Основний контент на всю ширину */
+   /* Стилі для посилань, які JS перенесе в сайдбар */
+   .mobile-links-wrapper {
+      margin-bottom: 2rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding-bottom: 1rem;
+   }
+
+   .mobile-links-wrapper a {
+      display: block;
+      padding: 12px 15px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text-white);
+      border-radius: 8px;
+      margin-bottom: 5px;
+      background: rgba(255, 255, 255, 0.05);
+   }
+
+   .mobile-links-wrapper a:hover,
+   .mobile-links-wrapper a.active {
+      background: var(--accent);
+      transform: translateX(5px);
+   }
+
+   .mobile-links-wrapper .resume-button {
+      background-color: var(--accent) !important;
+      text-align: center;
+      margin-top: 10px;
+   }
+
+   /* Основний контент розтягується на всю ширину */
    .main-content {
       margin-left: 0;
       width: 100%;
       padding: 1rem;
       padding-top: calc(var(--header-height) + 1rem);
    }
-}
 
-/* Для меню на мобільному (активується JS) */
-.mobile-nav-active #page-links {
-   display: flex;
-   flex-direction: column;
-   position: absolute;
-   top: var(--header-height);
-   left: 0;
-   width: 100%;
-   background: var(--bg-dark);
-   padding: 20px;
-   gap: 15px;
-   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
-   transform: none;
-   /* Важливо: скидаємо центрування */
-}
-
-.mobile-nav-active #page-links a {
-   text-align: center;
-   width: 100%;
-   display: block;
-}
-
-@media (max-width: 480px) {
+   /* Адаптація блоків досвіду */
    .work-header {
       flex-direction: column;
    }
@@ -687,10 +675,7 @@ section h2::before {
       margin-top: 10px;
    }
 
-   .projects-grid {
-      grid-template-columns: 1fr;
-   }
-
+   .projects-grid,
    .responsibilities-list {
       grid-template-columns: 1fr;
    }
